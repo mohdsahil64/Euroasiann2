@@ -1,0 +1,231 @@
+/* Services Page Styles */
+.services-page {
+  padding-top: 70px; 
+ background-color: #ffffff00;
+}
+
+.page-header {
+  background-color: #2776c5;
+}
+body[data-theme='light'] {
+  background-color: #f5faff;
+  color: #222;
+}
+
+body[data-theme='dark'] {
+  background-color: #ffffff;
+  color: #eee;
+}
+
+/* Navbar stays same in both themes */
+
+.services-content {
+  padding: 80px 0;
+  background: #22222200;
+}
+
+.services-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.service-item {
+  background: white;
+  border-radius: 15px;
+  padding: 3rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid #e9ecef;
+}
+
+.service-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.service-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.service-icon-large {
+  font-size: 4rem;
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  border-radius: 50%;
+  color: white;
+  box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+}
+
+.service-info {
+  flex: 1;
+}
+
+.service-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2f3fcc;
+  margin-bottom: 1rem;
+}
+
+.service-description {
+  font-size: 1.2rem;
+  color: #223fe4;
+  line-height: 1.6;
+}
+
+.service-details {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 10px;
+  border-left: 4px solid #3498db;
+}
+
+.details-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.details-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.detail-item {
+  padding: 0.5rem 0;
+  color: #555;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.detail-item::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #27ae60;
+  font-weight: bold;
+}
+
+/* Services CTA Section */
+.services-cta {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  color: white;
+  text-align: center;
+}
+
+.cta-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cta-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.cta-description {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .services-page {
+    padding-top: 60px;
+  }
+
+  .page-header {
+    padding: 60px 0;
+  }
+
+  .services-content {
+    padding: 60px 0;
+  }
+
+  .service-item {
+    padding: 2rem;
+  }
+
+  .service-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .service-icon-large {
+    align-self: center;
+    font-size: 3rem;
+    width: 70px;
+    height: 70px;
+  }
+
+  .service-title {
+    font-size: 1.6rem;
+  }
+
+  .service-description {
+    font-size: 1.1rem;
+  }
+
+  .service-details {
+    padding: 1.5rem;
+  }
+
+  .details-title {
+    font-size: 1.2rem;
+  }
+
+  .services-cta {
+    padding: 60px 0;
+  }
+
+  .cta-title {
+    font-size: 2rem;
+  }
+
+  .cta-description {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-item {
+    padding: 1.5rem;
+  }
+
+  .service-icon-large {
+    font-size: 2.5rem;
+    width: 60px;
+    height: 60px;
+  }
+
+  .service-title {
+    font-size: 1.4rem;
+  }
+
+  .service-description {
+    font-size: 1rem;
+  }
+
+  .service-details {
+    padding: 1rem;
+  }
+
+  .cta-title {
+    font-size: 1.8rem;
+  }
+}

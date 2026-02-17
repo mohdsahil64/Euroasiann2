@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import lottie from "lottie-web";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import "../styles/services.css";
+import "../styles/Services.css";
 import SEO from "../components/Seo";
 
 gsap.registerPlugin(ScrollTrigger);

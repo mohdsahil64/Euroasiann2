@@ -1,0 +1,94 @@
+.stake-section {
+  background: #ffffff;
+  padding: 120px 8%;
+}
+
+.stake-header {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 100px;
+}
+
+.stake-header h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-top: -120px;
+  color: #0a2540;
+  margin-bottom: 15px;
+}
+
+.stake-header p {
+  font-size: 16px;
+  color: #302b2b;
+  
+  line-height: 1.6;
+}
+
+/* ROWS */
+.stake-row {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
+  align-items: center;
+  margin-bottom: 120px;
+}
+
+.stake-row.reverse {
+ display: grid;
+  grid-template-columns: 0.8fr 1fr;
+  column-gap: 23cap;
+  align-items: center;
+  margin-bottom: 120px;
+}
+
+/* CONTENT */
+.stake-content h3 {
+  font-size: 30px;
+  color: #0a2540;
+  font-weight: 700;
+  margin-bottom: 23px;
+}
+
+.stake-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.stake-content li {
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 12px;
+  font-size: 16px;
+  color: #232930;
+}
+
+.stake-content li::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: #3a19f1;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 9px;
+}
+
+/* LOTTIE */
+.stake-lottie {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .stake-row,
+  .stake-row.reverse {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .stake-lottie {
+    max-width: 260px;
+  }
+}

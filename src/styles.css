@@ -1,0 +1,276 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+
+  background: transparent;
+
+}
+
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  background-color: #000000;
+  color: white;
+  
+}
+
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  height: 60px;
+}
+
+.nav {
+  display: flex;
+  gap: 100px;
+  font-size: 17px;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+.nav a:hover {
+  color: #ececec;
+}
+
+.cta-btn {
+  background: #ffffff;
+  color: rgb(0, 0, 0);
+  padding: 8px 10px;
+  border-radius: 7px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.2s ease;
+}
+
+.cta-btn:hover {
+  transform: scale(1.06);
+}
+
+
+
+/* MOBILE NAV PANEL (ANIMATED) */
+.mobile-nav {
+  position: locked;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  background: #0a0b0c;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+
+  /* animation */
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: all 0.35s ease;
+}
+
+.mobile-nav.open {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.mobile-nav a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 12px 0;
+  font-size: 15px;
+}
+
+.mobile-nav a:hover {
+  color: #ffffff;
+}
+/* TOGGLE (HIDDEN BY DEFAULT) */
+.menu-btn {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: white;
+}
+
+/* MOBILE NAV PANEL */
+.mobile-nav {
+  position: fixed;
+  align-items: right;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  background: #030303;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.mobile-nav a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 12px 0;
+  font-size: 15px;
+}
+
+.mobile-nav a:hover {
+  color: #ffffff;
+}
+
+/* ================= MOBILE ONLY ================= */
+@media (max-width: 768px) {
+
+  .nav {
+    display: none;        /* ❌ hide nav */
+  }
+
+  .cta-btn {
+    display: none;        /* ❌ hide button */
+  }
+
+  .menu-btn {
+    display: block;       /* ✅ show toggle */
+  }
+}
+
+/* ===== SOLUTIONS DROPDOWN ===== */
+
+.solutions-wrapper {
+  position: relative;
+}
+
+.solutions-link {
+  cursor: pointer;
+}
+
+.solutions-dropdown {
+  position: absolute;
+  top: 48px;
+  left: 0;
+  background: #081833;
+  padding: 24px 28px;
+  border-radius: 10px;
+  min-width: 420px;
+  display: none;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.solutions-wrapper:hover .solutions-dropdown {
+  display: block;
+}
+
+.solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px 32px;
+}
+
+.solution-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.solution-item svg {
+  font-size: 18px;
+}
+
+.solution-item:hover {
+  color: #c7f000;
+}
+
+.solution-item.highlight {
+  color: #c7f000;
+}
+.solutions-wrapper {
+  position: relative;
+}
+
+/* invisible hover bridge */
+.solutions-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 20px;
+}
+
+.solutions-dropdown {
+  top: 100%;
+  margin-top: 8px;
+}
+
+/* KEEP DROPDOWN OPEN */
+.solutions-wrapper:hover .solutions-dropdown {
+  display: block;
+}
+/* HERO WRAPPER */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #040608;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* background layer */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+/* content layer */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  padding: 0 24px;
+  text-align: left;   /* Stripe style */
+}
+
+.hero-content h1 {
+  font-size: 56px;
+  line-height: 1.15;
+}
+
+.hero-content h1 span {
+  color: #c7f000;
+}
+
+.hero-content p {
+  margin-top: 22px;
+  max-width: 520px;
+  color: #cfd6e4;
+}
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 72px;          /* 🔽 height kam */
+  z-index: 1000;
+
+  background: rgba(8, 24, 51, 0.35);
+  backdrop-filter: blur(14px);
+}
+.hero {
+  padding-top: 72px;
+}

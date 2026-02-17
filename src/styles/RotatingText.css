@@ -1,0 +1,54 @@
+/* ROOT ROTATOR */
+.text-rotate {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden; 
+  margin-top: 15px;                /* 🔥 box ke bahar nahi niklega */
+  font-weight: 600;
+  font-size: clamp(1.3rem, 1vw, 1.5rem);
+  line-height: 1.5;
+}
+
+/* Screen reader text */
+.text-rotate-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* SINGLE PURPLE BOX (IMPORTANT) */
+.text-rotate-lines,
+.text-rotate {
+  background: #30364F;
+  border-radius: 0.30em;
+  padding: 0.20em 0.45em;
+  box-shadow: #30364F;
+}
+
+/* WORD WRAPPER – NO BACKGROUND */
+.text-rotate-word {
+  display: inline-flex;
+  background: transparent;          /* 🔥 remove multiple boxes */
+  padding: 0;
+  margin: 0;
+}
+
+/* CHARACTER */
+.text-rotate-element {
+  display: inline-block;
+  color: #ffffff;
+  white-space: nowrap;
+  will-change: transform, opacity;
+}
+
+/* SPACE HANDLING */
+.text-rotate-space {
+  width: 0.3em;
+}

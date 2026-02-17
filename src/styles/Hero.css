@@ -1,0 +1,132 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+ 
+}
+.primary-btn {
+  padding: 11px 24px;
+  border-radius: 999px;
+  background: #ffffffd3;
+  color: #0f0c0c;
+  font-style: italic;
+  font-weight: 500;
+  border: none;
+}
+.hero-buttons {
+  position: relative;
+  z-index: 20;
+}
+
+.secondary-btn {
+  padding: 11px 22px;
+ font-style: italic;
+  border-radius: 999px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #fff;
+}
+.hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 120px 24px 80px;
+
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 60px;
+
+  position: relative;
+  z-index: 2; /* content above bg */
+}
+
+/* LEFT */
+.hero-left {
+  color: #fff;
+  margin-top: -150px;
+}
+
+.hero-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  font-size: 10px;
+  font-weight: 600;
+  border-radius: 999px;
+  background: #d3d8da34;
+  margin-top: 80px;
+  margin-bottom: 13px;
+}
+
+.hero-left h1 {
+  font-size: 50px;
+  color: #F5F2F2;
+  line-height: 1.05;
+  font-weight: 650;
+}
+
+.hero-left h1 span {
+  color: #BDE8F5;
+}
+
+.hero-actions {
+  margin-top: 36px;
+  display: flex;
+  gap: 16px;
+}
+
+
+
+
+/* RIGHT */
+.hero-right {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: -100px;
+  justify-content: center;
+}
+
+.mock-card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 5px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
+}
+
+.mock-card img {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+}
+
+.main-card {
+  width: 200;
+  max-width: 620px;
+}
+
+.small-card {
+  width: 100%;
+  max-width: 340px;
+  position: absolute;
+  right: -40px;
+  bottom: -40px;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+    padding: 80px 20px;
+  }
+ .hero-badge {
+    margin-bottom: 18px;
+  }
+
+  .hero-left h1 {
+    font-size: 38px;
+  }
+
+  .hero-right {
+    display: none; /* images hidden on mobile */
+  }
+}

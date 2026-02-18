@@ -5,12 +5,14 @@
  
 }
 .primary-btn {
-  padding: 11px 24px;
+  padding: 10px 15px;
   border-radius: 999px;
   background: #ffffffd3;
   color: #0f0c0c;
+
+  font-weight: bold;
   font-style: italic;
-  font-weight: 500;
+  font-size: 13px;
   border: none;
 }
 .hero-buttons {
@@ -54,11 +56,11 @@
   border-radius: 999px;
   background: #d3d8da34;
   margin-top: 80px;
-  margin-bottom: 13px;
+  margin-bottom: 15px;
 }
 
 .hero-left h1 {
-  font-size: 50px;
+  font-size: 55px;
   color: #F5F2F2;
   line-height: 1.05;
   font-weight: 650;

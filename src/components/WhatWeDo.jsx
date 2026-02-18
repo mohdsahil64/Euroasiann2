@@ -33,9 +33,8 @@ export default function WhatWeDo() {
   "Real-time vessel position tracking",
   "Fuel consumption analysis",
   "Weather & sea condition insights",
-  "ETA prediction and alerts",
-  "Deviation and delay monitoring",
   "Performance comparison by voyage",
+
 ]
 
     },
@@ -48,9 +47,9 @@ export default function WhatWeDo() {
   "Crew certification and compliance tracking",
   "Crew rotation and contract management",
   "Payroll and onboard allowances",
-  "Medical and document validity tracking",
+
   "Crew performance monitoring",
-  "Regulatory-ready crew records",
+
 ]
 
     },
@@ -61,11 +60,11 @@ export default function WhatWeDo() {
       points: [
   "Spare parts inventory control",
   "Automated RFQ generation",
-  "Vendor quotation comparison",
+
   "Purchase order management",
   "Budget and cost tracking",
   "Delivery status monitoring",
-  "Procurement audit trail",
+
 ]
 
     },
@@ -76,11 +75,10 @@ export default function WhatWeDo() {
       points: [
   "Dry dock planning and scheduling",
   "Planned maintenance system (PMS)",
-  "Defect and job tracking",
   "Maintenance cost control",
   "Asset lifecycle management",
   "Spare parts linkage with jobs",
-  "Maintenance history and analytics",
+
 ]
     },
    

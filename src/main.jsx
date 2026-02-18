@@ -3,16 +3,12 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import "./styles.css";
-import "./index.css"; // ya bhi global css hai
-
-
+import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <BrowserRouter>
   <React.StrictMode>
-
-    <App />
-
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </React.StrictMode>
-  </BrowserRouter>
 );

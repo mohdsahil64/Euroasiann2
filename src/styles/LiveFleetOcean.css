@@ -1,0 +1,151 @@
+.fleet-section {
+  padding: 120px 6%;
+  background: radial-gradient(circle at top, #ffffff, #ffffff);
+  margin-top: -140px;
+}
+
+.fleet-header {
+  max-width: 780px;
+  margin-bottom: 40px;
+}
+
+.fleet-header h2 {
+  font-size: 36px;
+  color: #0b1c3d;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.fleet-header p {
+  font-size: 15px;
+  color: #1a1b1d;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+/* Ocean */
+.ocean-container {
+  position: relative;
+  height: 420px;
+  border-radius: 22px;
+  background: linear-gradient(180deg, #061a30, #020914);
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* World map grid */
+.world-map {
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(
+      to right,
+      rgba(255,255,255,0.035) 0px,
+      rgba(255,255,255,0.035) 1px,
+      transparent 1px,
+      transparent 90px
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.035) 0px,
+      rgba(255,255,255,0.035) 1px,
+      transparent 1px,
+      transparent 90px
+    );
+  opacity: 0.28;
+  pointer-events: none;
+}
+
+/* Ships */
+.ship-wrapper {
+  position: absolute;
+  color: #ffffff; /* FULL WHITE */
+  cursor: pointer;
+}
+
+.ship-wrapper svg {
+  filter: drop-shadow(0 0 8px rgba(30,167,255,0.9));
+}
+
+/* Signal dot */
+.signal-dot {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 8px;
+  height: 8px;
+  background: #3cff9e;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(60,255,158,0.7); }
+  70% { box-shadow: 0 0 0 14px rgba(60,255,158,0); }
+  100% { box-shadow: 0 0 0 0 rgba(60,255,158,0); }
+}
+
+/* Tooltip */
+.tooltip {
+  position: absolute;
+  bottom: 38px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(10,25,45,0.95);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 12px;
+  color: #d7d9db;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.tooltip span {
+  display: block;
+  font-size: 11px;
+  color: #ffffff;
+}
+
+.ship-wrapper:hover .tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-6px);
+}
+
+/* Waves */
+.wave {
+  position: absolute;
+  width: 200%;
+  height: 140px;
+  bottom: -70px;
+  background: radial-gradient(
+    circle,
+    rgba(30,167,255,0.18),
+    transparent 60%
+  );
+  animation: waveMove 28s linear infinite;
+}
+
+.wave-2 {
+  bottom: -90px;
+  opacity: 0.55;
+  animation-duration: 38s;
+}
+
+@keyframes waveMove {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* Footer */
+.fleet-footer {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  color: #0b1c3d;
+  margin-top: 30px;
+  font-size: 18px;
+}
+

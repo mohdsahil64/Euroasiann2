@@ -5,6 +5,7 @@
   position: relative;              /* IMPORTANT: section ke andar properly behave kare */
   perspective: 900px;
   overflow: visible;
+  margin-top: -50px;
   transform-origin: center;
 }
 

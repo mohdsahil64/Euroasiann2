@@ -2,6 +2,8 @@ import "../styles/TrustedBy.css";
 import { useState } from "react";
 import WhyWeDifferent from "../components/Why";
 import What from "../components/WhatWeDo";
+import FleetCTA from "../components/FleetCTA";
+import LiveFleetOcean from "../components/LiveFleetOcean";
 import CardSwap, { Card } from "../components/CardSwap";
 import Video from "../components/ERPVideoShowcase";
 import logo1 from "../assets/trusted/logo1.png";
@@ -21,6 +23,9 @@ import procurementShot from "../assets/secreen/3.png";
 
 export default function TrustedBy() {
   const [speed] = useState(50);
+  const handleAnimationComplete = () => {
+    // Animation completed - production ready
+  };
 
   const logos = [
     logo1, logo2, logo3, logo4,
@@ -42,8 +47,12 @@ export default function TrustedBy() {
       </div>
      
      <WhyWeDifferent />
+     <FleetCTA />
       <Video />
        <What />
+      <LiveFleetOcean />
+      <FleetCTA />
+
 
   
 
@@ -67,12 +76,13 @@ export default function TrustedBy() {
         >
           {/* Left content */}
           <div>
-           <h1>hii</h1>
-            <p style={{ color: "#26425e", marginTop: "-104px", marginLeft: "-50px", fontStyle: "italic", lineHeight: 1.7, fontSize: "27px" }}>
-              Explore how our AI-driven maritime ERP centralizes fleet operations,
-               compliance, procurement, and real-time analytics into
-                one unified digital workspace designed for modern shipping enterprises.
+            <h2 style={{ fontSize: "36px", color: "#1a123a", fontWeight: "700", marginTop: "-60px", marginBottom: "40px" }}>
+              Real-Time Fleet & Crew Management
+            </h2>
+            <p style={{ fontSize: "18px", color: "#333", lineHeight: "1.6" }}>
+              Our ERP platform provides a centralized command dashboard for real-time monitoring of vessel performance, crew status, fuel usage, and voyage KPIs. With alert-driven anomaly tracking and role-based approvals, you can ensure operational efficiency and safety across your fleet.
             </p>
+            
           </div>
 
           {/* Right CardSwap */}

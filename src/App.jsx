@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import Services from "./pages/Services";
 import Footer from "./components/Footer";
-import Logo from "./assets/logo.png";
+import Logo from "/logo1.png";
 
 const navItems = [
   {

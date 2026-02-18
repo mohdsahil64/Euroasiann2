@@ -1,107 +1,110 @@
 import { useEffect, useRef } from "react";
-import "../styles/Contact.css";
 import lottie from "lottie-web";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import SEO from "../components/Seo";
-gsap.registerPlugin(ScrollTrigger);
+import {
+  User,
+  Mail,
+  Phone,
+  Building2,
+  Users,
+  Briefcase,
+  MessageSquare,
+  Send
+} from "lucide-react";
+import "../styles/Contact.css";
 
 export default function Contact() {
-
-  <SEO
-        title="Contact Euroasian Maritime ERP | Request Demo & Consultation"
-        description="Contact Euroasian Maritime ERP to request a demo, schedule a consultation, or learn how our platform can optimize your shipping operations."
-      />
-
-  const lottieRef = useRef();
-  const sectionRef = useRef();
+  const lottieRef = useRef(null);
 
   useEffect(() => {
-
-    /* LOTTIE LOAD */
-
     const anim = lottie.loadAnimation({
       container: lottieRef.current,
       renderer: "svg",
       loop: true,
       autoplay: true,
-      path: "/lottie/contact.json",
-    });
-
-    /* GSAP ANIMATION */
-
-    gsap.from(".contact-form", {
-      x: -80,
-      opacity: 0,
-      duration: 1,
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top 80%",
-      },
-    });
-
-    gsap.from(".contact-lottie", {
-      x: 80,
-      opacity: 0,
-      duration: 1,
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top 80%",
-      },
+      path: "/lottie/contact.json" // public folder
     });
 
     return () => anim.destroy();
-
   }, []);
 
   return (
-    <section className="contact-page" ref={sectionRef}>
-
+    <section className="contact-section" id="contact">
       <div className="contact-container">
-
         {/* LEFT */}
+        <div className="contact-left">
+          <h2>
+            Talk to our <span>Euroasiann</span> ERP Specialists
+          </h2>
 
-        <div className="contact-form">
-
-          <span className="contact-tag">REQUEST A DISCUSSION</span>
-
-          <h1>Talk to our Euroasiann ERP Specialists</h1>
-
-          <p className="contact-note">
+          <p>
             Share your requirements and our experts will contact you shortly.
           </p>
 
-          <form>
+          <form className="contact-form">
+            <div className="form-grid">
+              <div className="input-group">
+                <User size={18} />
+                <input type="text" placeholder="Full name" />
+              </div>
 
-            <div className="form-row">
-              <input placeholder="First Name" />
-              <input placeholder="Last Name" />
+              <div className="input-group">
+                <Mail size={18} />
+                <input type="email" placeholder="Work email" />
+              </div>
+
+              <div className="input-group">
+                <Phone size={18} />
+                <input type="tel" placeholder="Mobile number" />
+              </div>
+
+              <div className="input-group">
+                <Building2 size={18} />
+                <input type="text" placeholder="Company name" />
+              </div>
+
+              <div className="input-group">
+                <Users size={18} />
+                <select>
+                  <option value="">Company size</option>
+                  <option>1–10 employees</option>
+                  <option>11–50 employees</option>
+                  <option>51–200 employees</option>
+                  <option>201–500 employees</option>
+                  <option>500+ employees</option>
+                </select>
+              </div>
+
+              <div className="input-group">
+                <Briefcase size={18} />
+                <select>
+                  <option value="">Your position</option>
+                  <option>Owner / Founder</option>
+                  <option>Operations Manager</option>
+                  <option>Fleet Manager</option>
+                  <option>Technical Manager</option>
+                  <option>Procurement</option>
+                  <option>Other</option>
+                </select>
+              </div>
             </div>
 
-            <div className="form-row">
-              <input placeholder="Company Name" />
-              <input placeholder="Position" />
-          
-            </div>
-            <div className="gmail">
-            <input placehder="Business Email" />
-            <textarea placeholder="Describe requirement"></textarea>
+            <div className="input-group textarea">
+            
+              <textarea placeholder="Tell us about your requirements (optional)" />
             </div>
 
-            <button type="submit">Submit Request</button>
-
+            <button type="submit" className="submit-btn">
+              <Send size={18} />
+              Submit Request
+            </button>
           </form>
-
         </div>
 
         {/* RIGHT */}
-
-        <div className="contact-visual">
-          <div ref={lottieRef} className="contact-lottie"></div>
+        <div className="contact-right">
+          <div ref={lottieRef} className="contact-lottie" />
         </div>
-
       </div>
-
     </section>
   );
 }

@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 export default function Footer() {
   return (
     <footer className="footer">
+  
       <div className="footer-container">
 
         {/* LEFT */}
@@ -17,7 +18,7 @@ export default function Footer() {
           <div className="footer-socials">
             <a href="https://www.linkedin.com/company/euroasiann-group/ "><FaLinkedinIn /></a>
             <a href="tel:+49 15219712961"><FaPhone/></a>
-            <a href="mailto:info@euroasianngroup.com"><FaEnvelope/></a>
+            <a href="mailto:info@euroasiann.com"><FaEnvelope/></a>
           </div>
         </div>
 

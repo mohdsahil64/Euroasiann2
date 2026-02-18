@@ -78,11 +78,11 @@
 }
 
 .logo {
-  height: 55px;
+  height: 50px;
 }
 
 .card-nav-cta-button {
-  background-color: #dedfee;
+  background-color: #e0e1e7;
   color: white;
   border: none;
   border-radius: calc(0.75rem - 0.35rem);

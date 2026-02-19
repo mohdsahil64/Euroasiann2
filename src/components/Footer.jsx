@@ -3,10 +3,21 @@ import logo from "../assets/logo.png";
 import { FaLinkedinIn, FaPhone, FaEnvelope, } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import CTA2 from "../components/CTA2";
+import FloatingLines from "../components/FloatingLines";
 export default function Footer() {
   return (
     <footer className="footer">
-            <CTA2 />
+      <div className="footer-bg-floating">
+        <FloatingLines 
+          enabledWaves={["top","middle","bottom"]}
+          lineCount={5}
+          lineDistance={5}
+          bendRadius={5}
+          bendStrength={-0.5}
+          interactive={true}
+          parallax={true}
+        />
+      </div>
   
       <div className="footer-container">
 

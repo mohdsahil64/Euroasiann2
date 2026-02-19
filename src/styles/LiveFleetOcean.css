@@ -150,3 +150,95 @@
   font-size: 18px;
 }
 
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .fleet-section {
+    padding: 80px 6%;
+    margin-top: -80px;
+    margin-bottom: -60px;
+  }
+
+  .fleet-header h2 {
+    font-size: 28px;
+  }
+
+  .ocean-container {
+    height: 320px;
+  }
+
+  .fleet-footer {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .fleet-section {
+    padding: 60px 5%;
+    margin-top: -60px;
+    margin-bottom: -40px;
+  }
+
+  .fleet-header {
+    margin-bottom: 30px;
+  }
+
+  .fleet-header h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .fleet-header p {
+    font-size: 14px;
+  }
+
+  .ocean-container {
+    height: 280px;
+    border-radius: 16px;
+  }
+
+  .wave {
+    height: 100px;
+    bottom: -50px;
+  }
+
+  .wave-2 {
+    bottom: -70px;
+  }
+
+  .fleet-footer {
+    flex-direction: column;
+    gap: 10px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .fleet-section {
+    padding: 50px 4%;
+    margin-top: -50px;
+    margin-bottom: -30px;
+  }
+
+  .fleet-header h2 {
+    font-size: 20px;
+  }
+
+  .fleet-header p {
+    font-size: 13px;
+  }
+
+  .ocean-container {
+    height: 240px;
+    border-radius: 12px;
+  }
+
+  .tooltip {
+    font-size: 10px;
+    padding: 6px 10px;
+  }
+
+  .tooltip span {
+    font-size: 9px;
+  }
+}
+

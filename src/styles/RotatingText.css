@@ -52,3 +52,38 @@
 .text-rotate-space {
   width: 0.3em;
 }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .text-rotate {
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    margin-top: 12px;
+  }
+
+  .text-rotate-lines,
+  .text-rotate {
+    padding: 0.15em 0.35em;
+    border-radius: 0.25em;
+  }
+
+  .text-rotate-space {
+    width: 0.25em;
+  }
+}
+
+@media (max-width: 600px) {
+  .text-rotate {
+    font-size: clamp(0.85rem, 3vw, 1.1rem);
+    margin-top: 10px;
+  }
+
+  .text-rotate-lines,
+  .text-rotate {
+    padding: 0.12em 0.3em;
+    border-radius: 0.2em;
+  }
+
+  .text-rotate-space {
+    width: 0.2em;
+  }
+}

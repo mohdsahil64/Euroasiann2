@@ -24,3 +24,40 @@
   
   line-height: 1;
 }
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .curved-loop-jacket {
+    min-height: 80vh;
+    margin-top: -200px;
+    margin-bottom: -200px;
+  }
+
+  .curved-loop-svg {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .curved-loop-jacket {
+    min-height: 60vh;
+    margin-top: -150px;
+    margin-bottom: -150px;
+  }
+
+  .curved-loop-svg {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .curved-loop-jacket {
+    min-height: 50vh;
+    margin-top: -100px;
+    margin-bottom: -100px;
+  }
+
+  .curved-loop-svg {
+    font-size: 1rem;
+  }
+}

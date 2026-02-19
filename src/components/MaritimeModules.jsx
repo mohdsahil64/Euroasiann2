@@ -1,5 +1,6 @@
 import { Ship, Box, MapPin, Users } from "lucide-react";
 import "../styles/MaritimeModules.css";
+
 export default function MaritimeStakeholderCards() {
   return (
     <section className="stakeholder-section">
@@ -76,6 +77,7 @@ export default function MaritimeStakeholderCards() {
           </ul>
         </div>
       </div>
+
     </section>
     
   );

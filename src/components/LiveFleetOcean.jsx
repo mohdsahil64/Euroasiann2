@@ -3,7 +3,6 @@ import { Ship } from "lucide-react";
 import gsap from "gsap";
 import "../styles/LiveFleetOcean.css";
 
-
 const vessels = Array.from({ length: 10 }).map((_, i) => ({
   id: i,
   name: `Vessel ${i + 1}`,
@@ -83,6 +82,7 @@ export default function LiveFleetOcean() {
         <strong>Live Fleet Status</strong>
         <span>10 vessels active</span>
       </div>
+  
     </section>
   );
 }

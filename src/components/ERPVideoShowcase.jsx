@@ -2,6 +2,12 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import gsap from "gsap";
 import "../styles/ERPVideoShowcase.css";
 
+const vesselVideo = "/videos/vessel.mp4";
+const crewVideo = "/videos/crew.mp4";
+const rfqVideo = "/videos/rfq.mp4";
+const complianceVideo = "/videos/compliance.mp4";
+const certificationsVideo = "/videos/certifications.mp4";
+
 const SLIDE_DURATION = 8; // seconds (5–10s as you want)
 
 export default function ERPVideoShowcase() {
@@ -10,27 +16,27 @@ export default function ERPVideoShowcase() {
       {
         title: "Vessel Management",
         desc: "Track voyage status, vessel KPIs, documents, and operational visibility in one place.",
-        video: "/src/assets/videos/vessel.mp4",
+        video: vesselVideo,
       },
       {
         title: "Crew Management",
         desc: "Manage crew profiles, schedules, certifications, and onboard readiness with full control.",
-        video: "/src/assets/videos/crew.mp4",
+        video: crewVideo,
       },
       {
         title: "RFQ & Procurement",
         desc: "Automate RFQs, compare vendor quotes, approvals, and purchase orders seamlessly.",
-        video: "/src/assets/videos/rfq.mp4",
+        video: rfqVideo,
       },
       {
         title: "Compliance & Audits",
         desc: "Stay audit-ready with smart compliance tracking, logs, and structured reporting.",
-        video: "/src/assets/videos/compliance.mp4",
+        video: complianceVideo,
       },
       {
         title: "Certificates & Documentation",
         desc: "Centralize vessel/crew certificates with expiry alerts and secure storage.",
-        video: "/src/assets/videos/certifications.mp4",
+        video: certificationsVideo,
       },
     ],
     []

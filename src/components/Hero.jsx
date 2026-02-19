@@ -1,12 +1,12 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import Hyperspeed from "../components/Hyperspeed";
+import { ArrowRight } from "lucide-react";
+
 import "../styles/Hero.css";
+import FloatingLines from "../components/FloatingLines";
 
-
-
-
-
+const homeImg = "/home.jpg";
+const home1Img = "/home1.jpg";
 
 export default function Hero() {
   const headingRef = useRef(null);
@@ -48,21 +48,19 @@ export default function Hero() {
 
   return (
     <section className="hero">
-      {/* BACKGROUND (UNCHANGED) */}
-      <Hyperspeed
-        className="hero-bg"
-        dotSize={5}
-        gap={15}
-        baseColor="#494799"
-        activeColor="#6149e9"
-        proximity={150}
-        shockRadius={350}
-        shockStrength={5}
-        resistance={750}
-        returnDuration={3}
-      />
+      {/* FloatingLines Background */}
+      <div className="hero-bg-floating">
+        <FloatingLines 
+          enabledWaves={["top","middle","bottom"]}
+          lineCount={5}
+          lineDistance={5}
+          bendRadius={5}
+          bendStrength={-0.5}
+          interactive={true}
+          parallax={true}
+        />
+      </div>
 
-      {/* CONTENT */}
       <div className="hero-inner">
         {/* LEFT */}
         <div className="hero-left">
@@ -75,19 +73,25 @@ export default function Hero() {
     <span>One ERP Platform</span>
   </h1>
 
+  <p className="hero-text-anim" style={{ marginTop: "1.5rem", fontSize: "1.1rem", lineHeight: "1.6", color: "rgba(255,255,255,0.85)", maxWidth: "500px" }}>
+    Euroasiann’s Live Fleet Monitoring platform delivers a real-time, visual overview of vessel movements across global waters. 
+  </p>
+
   <div className="hero-actions hero-btn-anim">
-    <a href="/contact" className="primary-btn">Request Free Demo</a>
+    <a href="/contact" className="primary-btn">
+      Request Free Demo <ArrowRight size={20} style={{ marginLeft: "0.5rem", display: "inline" }} />
+    </a>
     <button className="secondary-btn">Learn More</button>
   </div>
 </div>
 
 <div className="hero-right">
   <div className="mock-card main-card hero-img-anim">
-    <img src="./src/assets/home.jpg" />
+    <img src={homeImg} alt="ERP Dashboard" />
   </div>
 
   <div className="mock-card small-card hero-img-anim">
-    <img src="./src/assets/home1.jpg" />
+    <img src={home1Img} alt="ERP Platform Demo" />
   </div>
 </div>
 

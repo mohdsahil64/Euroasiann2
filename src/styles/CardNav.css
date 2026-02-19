@@ -86,13 +86,16 @@
   color: white;
   border: none;
   border-radius: calc(0.75rem - 0.35rem);
-  padding: 0 1rem;
-  height: 100%;
+  padding: 0 0.7rem;
+  height: 85%;
   font-weight: 500;
   cursor: pointer;
   text-align: center;
   transition: background-color 0.3s ease;
   align-items: center;
+  display: flex;
+  gap: 0.3rem;
+  font-size: 0.9rem;
 }
 
 .card-nav-cta-button:hover {

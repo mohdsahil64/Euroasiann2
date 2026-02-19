@@ -38,7 +38,7 @@
 }
 
 .trusted-logo img {
-  max-width: 96px;
+  max-width: 80px;
 
   transition: filter 0.3s ease;
 }

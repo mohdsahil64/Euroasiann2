@@ -1,7 +1,8 @@
 import { useLayoutEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
-// use your own icon import if react-icons is not available
 import { GoArrowUpRight } from 'react-icons/go';
+import { Mail } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import '../styles/CardNav.css';
 
 const CardNav = ({
@@ -153,13 +154,14 @@ const CardNav = ({
             <img src={logo} alt={logoAlt} className="logo" />
           </div>
 
-          <button href="/Contact"
-            type="button"
+          <Link
+            to="/contact"
             className="card-nav-cta-button"
-            style={{ backgroundColor: buttonBgColor, color: buttonTextColor }}
+            style={{ backgroundColor: buttonBgColor, color: buttonTextColor, textDecoration: "none", display: "flex", alignItems: "center" }}
           >
+            <Mail size={18} style={{ marginRight: "0.4rem" }} />
             Contact Us
-          </button>
+          </Link>
         </div>
 
         <div className="card-nav-content" aria-hidden={!isExpanded}>

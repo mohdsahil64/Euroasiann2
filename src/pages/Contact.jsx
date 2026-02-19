@@ -10,6 +10,7 @@ import {
   MessageSquare,
   Send
 } from "lucide-react";
+import FloatingLines from "../components/FloatingLines";
 import "../styles/Contact.css";
 
 export default function Contact() {
@@ -29,6 +30,17 @@ export default function Contact() {
 
   return (
     <section className="contact-section" id="contact">
+      <div className="contact-bg-floating">
+        <FloatingLines 
+          enabledWaves={["top","middle","bottom"]}
+          lineCount={5}
+          lineDistance={5}
+          bendRadius={5}
+          bendStrength={-0.5}
+          interactive={true}
+          parallax={true}
+        />
+      </div>
       <div className="contact-container">
         {/* LEFT */}
         <div className="contact-left">

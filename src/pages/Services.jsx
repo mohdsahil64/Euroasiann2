@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import FloatingLines from "../components/FloatingLines";
 import "../styles/Services.css";
 
 
@@ -97,6 +98,17 @@ export default function Services() {
 
   return (
     <section className="services-cards-section" id="services">
+      <div className="services-bg-floating">
+        <FloatingLines 
+          enabledWaves={["top","middle","bottom"]}
+          lineCount={5}
+          lineDistance={5}
+          bendRadius={5}
+          bendStrength={-0.5}
+          interactive={true}
+          parallax={true}
+        />
+      </div>
       {/* HEADER */}
       <div className="services-cards-header">
         <h2>

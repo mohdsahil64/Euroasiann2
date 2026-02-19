@@ -16,7 +16,7 @@
 }
 
 .why-p {
-  font-size: 16px;
+  font-size: 15px;
   max-width: 800px;
   margin: 0 auto 60px;
   line-height: 1.6;
@@ -193,6 +193,19 @@
   color: #0b1c3d;
   font-weight: 700;
   margin-bottom: 15px;
+}
+
+/* CARD HEADER WITH ICON */
+.whatwedo-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.whatwedo-icon {
+  color: #3a19f1;
+  flex-shrink: 0;
 }
 
 /* RESPONSIVE */

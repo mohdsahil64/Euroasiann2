@@ -1,8 +1,9 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import CardNav from "./components/CardNav";
 import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import Services from "./pages/Services";
+import NotFound from "./pages/404";
 import Footer from "./components/Footer";
 import Logo from "/logo1.png";
 
@@ -12,12 +13,10 @@ const navItems = [
     bgColor: "#0D0716",
     textColor: "#fff",
     links: [
-      { label: "QHSE", ariaLabel: "About Company" },
-      { label: "Crew Managed", ariaLabel: "About Careers" },
-      { label: "Procurement", ariaLabel: "About Careers" },
-      { label: "Inspection", ariaLabel: "About Careers" }
-      
-  
+      { label: "Home", href: "/", ariaLabel: "Euroasiann Home" },
+      { label: "QHSE", href: "/services", ariaLabel: "QHSE Solutions" },
+      { label: "Crew Managed", href: "/services", ariaLabel: "Crew Management" },
+      { label: "Procurement", href: "/services", ariaLabel: "Procurement" }
     ]
   },
   {
@@ -25,10 +24,10 @@ const navItems = [
     bgColor: "#170D27",
     textColor: "#fff",
     links: [
-      { label: "Vessels Managed", ariaLabel: "Featured Projects" },
-      { label: "Global Ports Integrated", ariaLabel: "Project Case Studies" },
-      { label: "Members Coordinated", ariaLabel: "Project Case Studies" },
-      { label: "Maintenance & Dry Dock", ariaLabel: "Project Case Studies" }
+      { label: "Vessels Managed", href: "/services", ariaLabel: "Vessels Management" },
+      { label: "Global Ports Integrated", href: "/services", ariaLabel: "Global Ports" },
+      { label: "Members Coordinated", href: "/services", ariaLabel: "Members Coordination" },
+      { label: "Maintenance & Dry Dock", href: "/services", ariaLabel: "Maintenance Services" }
     ]
   },
   {
@@ -36,14 +35,17 @@ const navItems = [
     bgColor: "#271E37",
     textColor: "#fff",
     links: [
-      { label: "Email", ariaLabel: "Email us" },
-      { label: "Twitter", ariaLabel: "Twitter" },
-      { label: "LinkedIn", ariaLabel: "LinkedIn" }
+      { label: "Email", href: "mailto:info@euroasiann.com", ariaLabel: "Email us" },
+      { label: "Twitter", href: "https://twitter.com/euroasiann", ariaLabel: "Twitter" },
+      { label: "LinkedIn", href: "https://linkedin.com/company/euroasiann", ariaLabel: "LinkedIn" }
     ]
   }
 ];
 
 export default function App() {
+  const location = useLocation();
+  const is404 = location.pathname !== "/" && location.pathname !== "/contact" && location.pathname !== "/services";
+
   return (
     <>
       <CardNav
@@ -61,8 +63,9 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/services" element={<Services />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
-        <Footer />
+        {!is404 && <Footer />}
       </div>
     </>
   );

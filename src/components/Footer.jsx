@@ -2,10 +2,11 @@ import "../styles/Footer.css";
 import logo from "../assets/logo.png";
 import { FaLinkedinIn, FaPhone, FaEnvelope, } from "react-icons/fa";
 import { Link } from "react-router-dom";
-
+import CTA2 from "../components/CTA2";
 export default function Footer() {
   return (
     <footer className="footer">
+            <CTA2 />
   
       <div className="footer-container">
 

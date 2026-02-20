@@ -168,6 +168,10 @@
     top: 1.2em;
   }
 
+  .card-nav-cta-button{
+    bottom: hide;
+  }
+
   .card-nav-top {
     padding: 0.5rem 1rem;
     justify-content: space-between;
@@ -183,9 +187,7 @@
     order: 1;
   }
 
-  .card-nav-cta-button {
-    display: none;
-  }
+
 
   .card-nav-content {
     flex-direction: column;

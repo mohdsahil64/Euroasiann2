@@ -2,8 +2,8 @@ import "../styles/TrustedBy.css";
 import { useState } from "react";
 import WhyWeDifferent from "../components/Why";
 import What from "../components/WhatWeDo";
+import Dashboard from "../components/DashboardPreview";
 
-import FleetCTA from "../components/FleetCTA";
 import LiveFleetOcean from "../components/LiveFleetOcean";
 import CardSwap, { Card } from "../components/CardSwap";
 import Video from "../components/ERPVideoShowcase";
@@ -48,7 +48,8 @@ export default function TrustedBy() {
       </div>
      
      <WhyWeDifferent />
-     <FleetCTA />
+        <Dashboard />
+
       <Video />
        <What />
       <LiveFleetOcean />

@@ -46,7 +46,7 @@ export default function DashboardPreview() {
     <section className="dashboard-preview" ref={sectionRef}>
       <div className="dashboard-header">
         <h2>
-          Inside <span>Euroasiann ERP</span>
+          Inside <span>Euroasiann ERP</span> A Unified Dashboard
         </h2>
         <p>
           A unified dashboard to manage users, payroll, vessels, compliance,

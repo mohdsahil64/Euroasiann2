@@ -145,9 +145,7 @@ export default function ERPVideoShowcase() {
             </button>
           </div>
 
-          <div className="evs-progress">
-            <div className="evs-progress-bar" ref={progressRef} />
-          </div>
+       
            
 
           

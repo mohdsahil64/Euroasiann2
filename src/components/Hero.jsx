@@ -73,9 +73,10 @@ export default function Hero() {
     <span>One ERP Platform</span>
   </h1>
 
-  <p className="hero-text-anim" style={{ marginTop: "1.5rem", fontSize: "1.1rem", lineHeight: "1.6", color: "rgba(255,255,255,0.85)", maxWidth: "500px" }}>
-    Euroasiann’s Live Fleet Monitoring platform delivers a real-time, visual overview of vessel movements across global waters. 
-  </p>
+  <p className="hero-text-anim" style={{ marginTop: "1.5rem", fontSize: "1.1rem", lineHeight: "1.6", color: "rgba(255, 255, 255, 0.42)", maxWidth: "500px" }}>
+   All in One Euroasiann ERP platform built to simplify maritime operations and deliver complete operational control. Everything maritime teams need fleet, crew, compliance in ERP system.
+</p>
+  
 
   <div className="hero-actions hero-btn-anim">
     <a href="/contact" className="primary-btn">

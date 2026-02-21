@@ -56,9 +56,12 @@ export default function WhyWeDifferent() {
           Why We’re <span>Different</span>
         </h2>
         <p>
-          Purpose-built maritime ERP designed to simplify complex operations,
-          ensure compliance, and deliver real-time operational intelligence.
-        </p>
+  We are different because Euroasiann is built with a deep understanding of
+  real maritime operations. Our platform is designed to simplify complex
+  workflows, bring clarity to daily decision-making, and provide a single,
+  reliable system that adapts to the needs of modern shipping and maritime
+  enterprises.
+</p>
       </header>
 
       <div className="why-cards">

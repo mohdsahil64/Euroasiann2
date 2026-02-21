@@ -37,7 +37,7 @@ const navItems = [
     links: [
       { label: "Email", href: "mailto:info@euroasiann.com", ariaLabel: "Email us" },
       { label: "Twitter", href: "https://twitter.com/euroasiann", ariaLabel: "Twitter" },
-      { label: "LinkedIn", href: "https://linkedin.com/company/euroasiann", ariaLabel: "LinkedIn" }
+      { label: "LinkedIn", href: "https://www.linkedin.com/company/euroasiann-group/", ariaLabel: "LinkedIn" }
     ]
   }
 ];

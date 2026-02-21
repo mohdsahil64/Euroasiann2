@@ -1,6 +1,7 @@
 import "../styles/TrustedBy.css";
 import { useState } from "react";
 import What from "../components/WhatWeDo";
+import Gif from "../components/GifShowcase";
 import Why from "../components/Why";
 import Dashboard from "../components/DashboardPreview";
 import LiveFleetOcean from "../components/LiveFleetOcean";
@@ -15,7 +16,7 @@ import logo6 from "../assets/trusted/logo6.jpg";
 import logo7 from "../assets/trusted/logo7.jpg";
 import logo8 from "../assets/trusted/logo8.jpg";
 import logo9 from "../assets/trusted/logo9.jpg";
-
+import Search from "../components/Search";
 /* ✅ YOUR SCREENSHOTS (put these files in src/assets/screens/) */
 import analyticsShot from "../assets/secreen/1.png";
 import crewShot from "../assets/secreen/2.png";
@@ -46,15 +47,13 @@ export default function TrustedBy() {
         </div>
       </div>
      <Why />
+     <Search />
+        <Gif />
         <Dashboard />
       <Video />
        <What />
       <LiveFleetOcean />
-       
-     
 
-
-  
 
       {/* ✅ CardSwap Showcase Section (NEW) */}
       <div
@@ -76,7 +75,7 @@ export default function TrustedBy() {
         >
           {/* Left content */}
           <div>
-            <h2 style={{ fontSize: "36px", color: "#1a123a", fontWeight: "700", marginTop: "-60px", marginBottom: "40px" }}>
+            <h2 style={{ fontSize: "36px", color: "#1a123a", fontWeight: "700", marginTop: "-80px", marginBottom: "40px" }}>
               Real-Time Fleet & Crew Management
             </h2>
             <p style={{ fontSize: "18px", color: "#333", lineHeight: "1.6" }}>

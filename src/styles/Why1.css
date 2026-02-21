@@ -20,14 +20,14 @@
 }
 
 .why-header h2 span {
-  color: #1a80c0;
+  color: #000000;
 }
 
 .why-header p {
   font-size: 15px;
   line-height: 1.65;
   font-style: italic;
-  color: #36404bd3;
+  color: #000000de;
 }
 
 /* GRID */

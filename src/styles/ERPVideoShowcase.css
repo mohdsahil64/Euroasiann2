@@ -16,12 +16,12 @@
 
 .evs-eyebrow {
   display: inline-block;
-  font-size: 12px;
+  font-size: 10px;
   letter-spacing: 0.18em;
   font-weight: 700;
   margin-left: -30px;
   font-style: italic;
-  color: black;
+  color: rgba(0, 0, 0, 0.589);
   margin-bottom: 0px;
 }
 

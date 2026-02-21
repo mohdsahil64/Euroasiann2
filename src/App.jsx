@@ -1,4 +1,6 @@
 import { Routes, Route, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
+
 import CardNav from "./components/CardNav";
 import Home from "./pages/Home";
 import Contact from "./pages/Contact";
@@ -6,6 +8,7 @@ import Services from "./pages/Services";
 import NotFound from "./pages/404";
 import Footer from "./components/Footer";
 import Logo from "/logo1.png";
+import Flash from "./components/FlashScreen";
 
 const navItems = [
   {
@@ -44,29 +47,50 @@ const navItems = [
 
 export default function App() {
   const location = useLocation();
-  const is404 = location.pathname !== "/" && location.pathname !== "/contact" && location.pathname !== "/services";
+  const isHome = location.pathname === "/";
+  const is404 =
+    location.pathname !== "/" &&
+    location.pathname !== "/contact" &&
+    location.pathname !== "/services";
+
+  const [showFlash, setShowFlash] = useState(isHome);
+
+  useEffect(() => {
+    if (!isHome) return; // ❌ only home page allowed
+
+    const timer = setTimeout(() => {
+      setShowFlash(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, [isHome]);
+
+  // 🔥 ONLY home page splash
+  if (showFlash && isHome) {
+    return <Flash />;
+  }
 
   return (
     <>
       <CardNav
         logo={Logo}
         logoAlt="Euroasiann Group"
-        items={navItems}
+        items={[]}
         baseColor="transparent"
         menuColor="#ffffff"
         buttonBgColor="#fff"
         buttonTextColor="#000000"
         ease="back.out(1.7)"
       />
-      <div style={{ paddingTop: 0 }}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        {!is404 && <Footer />}
-      </div>
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+
+      {!is404 && <Footer />}
     </>
   );
 }

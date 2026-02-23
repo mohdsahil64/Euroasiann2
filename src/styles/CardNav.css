@@ -121,7 +121,9 @@
   visibility: visible;
   pointer-events: auto;
 }
-
+.card-nav {
+  transition: height 0.35s ease;
+}
 .nav-card {
   height: 100%;
   flex: 1 1 0;
@@ -147,7 +149,12 @@
   flex-direction: column;
   gap: 2px;
 }
-
+/* FIX: expand container when menu opens */
+.card-nav.open {
+  height: auto;
+  min-height: 300px; /* desktop ke liye */
+  overflow: visible;
+}
 .nav-card-link {
   font-size: 16px;
   cursor: pointer;
@@ -162,54 +169,10 @@
   opacity: 0.75;
 }
 
+
 @media (max-width: 768px) {
-  .card-nav-container {
-    width: 90%;
-    top: 1.2em;
-  }
+  .card-nav.open {
+    min-height: 100px;
 
-  .card-nav-cta-button{
-    bottom: hide;
-  }
-
-  .card-nav-top {
-    padding: 0.5rem 1rem;
-    justify-content: space-between;
-  }
-
-  .hamburger-menu {
-    order: 2;
-  }
-
-  .logo-container {
-    position: static;
-    transform: none;
-    order: 1;
-  }
-
-
-
-  .card-nav-content {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 8px;
-    padding: 0.5rem;
-    bottom: 0;
-    justify-content: flex-start;
-  }
-
-  .nav-card {
-    height: auto;
-    min-height: 60px;
-    flex: 1 1 auto;
-    max-height: none;
-  }
-
-  .nav-card-label {
-    font-size: 18px;
-  }
-
-  .nav-card-link {
-    font-size: 15px;
   }
 }

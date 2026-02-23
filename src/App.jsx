@@ -73,15 +73,16 @@ export default function App() {
   return (
     <>
       <CardNav
-        logo={Logo}
-        logoAlt="Euroasiann Group"
-        items={[]}
-        baseColor="transparent"
-        menuColor="#ffffff"
-        buttonBgColor="#fff"
-        buttonTextColor="#000000"
-        ease="back.out(1.7)"
-      />
+  logo={Logo}
+  logoAlt="Euroasiann Group"
+  items={[]}
+ items={navItems}
+  baseColor="transparent"
+  menuColor="#ffffff"
+  buttonBgColor="#fff"
+  buttonTextColor="#000000"
+  ease="back.out(1.7)"
+/>
 
       <Routes>
         <Route path="/" element={<Home />} />

@@ -74,7 +74,7 @@ export default function Hero() {
   </h1>
 
   <p className="hero-text-anim" style={{ marginTop: "1.5rem", fontSize: "1.1rem", lineHeight: "1.6", color: "rgba(255, 255, 255, 0.42)", maxWidth: "500px" }}>
-   All in One Euroasiann ERP platform built to simplify maritime operations and deliver complete operational control. Everything maritime teams need fleet, crew, compliance in ERP system.
+   All in One Euroasiann ERP platform Optimizing Fleet Efficiency Through Smart Procurement. Smart Solutions, Small Costs. Strong Results.
 </p>
   
 

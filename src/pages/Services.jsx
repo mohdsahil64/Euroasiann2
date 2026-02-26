@@ -138,8 +138,8 @@ export default function Services() {
               <h3>{service.title}</h3>
               <p>{service.desc}</p>
 
-              <a href="#contact" className="service-cta">
-                Learn More <ArrowRight size={16} />
+              <a href="/contact" className="service-cta">
+                Request For Demo <ArrowRight size={16} />
               </a>
             </div>
           );

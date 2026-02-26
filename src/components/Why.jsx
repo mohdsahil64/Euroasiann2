@@ -58,9 +58,7 @@ export default function WhyWeDifferent() {
         <p>
   We are different because Euroasiann is built with a deep understanding of
   real maritime operations. Our platform is designed to simplify complex
-  workflows, bring clarity to daily decision-making, and provide a single,
-  reliable system that adapts to the needs of modern shipping and maritime
-  enterprises.
+  workflows.
 </p>
       </header>
 

@@ -1,7 +1,6 @@
 import "../styles/TrustedBy.css";
 import { useState } from "react";
 import What from "../components/WhatWeDo";
-import Gif from "../components/GifShowcase";
 import Why from "../components/Why";
 import Dashboard from "../components/DashboardPreview";
 import LiveFleetOcean from "../components/LiveFleetOcean";
@@ -48,7 +47,7 @@ export default function TrustedBy() {
       </div>
      <Why />
      <Search />
-        <Gif />
+
         <Dashboard />
       <Video />
        <What />

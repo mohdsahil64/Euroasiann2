@@ -28,9 +28,9 @@ export default function Footer() {
             <span>3rd Floor, A321, Master Mind 4, Royal Palms, Goregaon East, Mumbai-400065, India </span>
           </div>
           <div className="footer-socials">
-            <a href="https://www.linkedin.com/company/euroasiann-group/ "><FaLinkedinIn /></a>
-            <a href="tel:+49 15219712961"><FaPhone/></a>
-            <a href="mailto:info@euroasiann.com"><FaEnvelope/></a>
+            <a href="https://www.linkedin.com/company/euroasiann-group/" target="_blank" rel="noopener noreferrer"><FaLinkedinIn /></a>
+            <a href="tel:+49 15219712961" target="_blank" rel="noopener noreferrer"><FaPhone/></a>
+            <a href="mailto:info@euroasiann.com" target="_blank" rel="noopener noreferrer"><FaEnvelope/></a>
           </div>
         </div>
 

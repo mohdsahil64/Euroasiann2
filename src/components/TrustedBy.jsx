@@ -4,6 +4,7 @@ import What from "../components/WhatWeDo";
 import Why from "../components/Why";
 import Dashboard from "../components/DashboardPreview";
 import LiveFleetOcean from "../components/LiveFleetOcean";
+import Crew from "../components/Crew";
 import CardSwap, { Card } from "../components/CardSwap";
 import Video from "../components/ERPVideoShowcase";
 import logo1 from "../assets/trusted/logo1.png";
@@ -17,7 +18,7 @@ import logo8 from "../assets/trusted/logo8.jpg";
 import logo9 from "../assets/trusted/logo9.jpg";
 import Search from "../components/Search";
 /* ✅ YOUR SCREENSHOTS (put these files in src/assets/screens/) */
-import analyticsShot from "../assets/secreen/1.png";
+import analyticsShot from "../assets/secreen/4.jpg";
 import crewShot from "../assets/secreen/2.png";
 import procurementShot from "../assets/secreen/3.png";
 
@@ -47,7 +48,7 @@ export default function TrustedBy() {
       </div>
      <Why />
      <Search />
-
+     <Crew />
         <Dashboard />
       <Video />
        <What />

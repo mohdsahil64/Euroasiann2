@@ -1,6 +1,6 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
-
+import Crew from "./pages/CrewAccountsPage";
 import CardNav from "./components/CardNav";
 import Home from "./pages/Home";
 import Contact from "./pages/Contact";
@@ -17,8 +17,8 @@ const navItems = [
     textColor: "#fff",
     links: [
       { label: "Home", href: "/", ariaLabel: "Euroasiann Home" },
-      { label: "QHSE", href: "/services", ariaLabel: "QHSE Solutions" },
-      { label: "Crew Managed", href: "/services", ariaLabel: "Crew Management" },
+      { label: "QHSE", href: "/crew", ariaLabel: "QHSE Solutions" },
+      { label: "Crew Managed", href: "/crew", ariaLabel: "Crew Management" },
       { label: "Procurement", href: "/services", ariaLabel: "Procurement" }
     ]
   },
@@ -87,6 +87,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/crew" element={<Crew />} />
         <Route path="/services" element={<Services />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

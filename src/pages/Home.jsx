@@ -2,7 +2,6 @@ import Hero from "../components/Hero";
 import TrustedBy from "../components/TrustedBy";
 import Maritime from "../components/MaritimeModules";
 
-
 export default function Home() {
   return (
     <>
@@ -10,7 +9,6 @@ export default function Home() {
       <Hero />
       <TrustedBy />
        <Maritime />
-
     </>
   );
 }

@@ -5,10 +5,10 @@ import Maritime from "../components/MaritimeModules";
 export default function Home() {
   return (
     <>
-  
       <Hero />
       <TrustedBy />
        <Maritime />
+       
     </>
   );
 }

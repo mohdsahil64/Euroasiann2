@@ -5,6 +5,7 @@ import Why from "../components/Why";
 import Dashboard from "../components/DashboardPreview";
 import LiveFleetOcean from "../components/LiveFleetOcean";
 import Crew from "../components/Crew";
+import Review from "../components/PeopleReviews";
 import CardSwap, { Card } from "../components/CardSwap";
 import Video from "../components/ERPVideoShowcase";
 import logo1 from "../assets/trusted/logo1.png";
@@ -47,12 +48,13 @@ export default function TrustedBy() {
         </div>
       </div>
      <Why />
-     <Search />
+     <Review />
      <Crew />
+      <LiveFleetOcean />
+      <Search />
         <Dashboard />
       <Video />
        <What />
-      <LiveFleetOcean />
 
 
       {/* ✅ CardSwap Showcase Section (NEW) */}

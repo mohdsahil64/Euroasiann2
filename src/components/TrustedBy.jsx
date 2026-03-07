@@ -5,9 +5,10 @@ import Why from "../components/Why";
 import Dashboard from "../components/DashboardPreview";
 import LiveFleetOcean from "../components/LiveFleetOcean";
 import Crew from "../components/Crew";
-import Review from "../components/PeopleReviews";
+import FlowMap from "../components/ProcessFlowMap";
 import CardSwap, { Card } from "../components/CardSwap";
 import Video from "../components/ERPVideoShowcase";
+import Main from "../components/MainVideo";
 import logo1 from "../assets/trusted/logo1.png";
 import logo2 from "../assets/trusted/logo2.png";
 import logo3 from "../assets/trusted/logo3.png";
@@ -48,8 +49,9 @@ export default function TrustedBy() {
         </div>
       </div>
      <Why />
-     <Review />
+     <FlowMap />
      <Crew />
+     <Main />
       <LiveFleetOcean />
       <Search />
         <Dashboard />

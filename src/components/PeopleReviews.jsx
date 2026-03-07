@@ -191,7 +191,7 @@ export default function PeopleReviews() {
           <span className="reviews-kicker-text">Trusted Clients</span>
         </div>
 
-        <h2>What teams say after switching to <span>Euroasiann</span></h2>
+        <h2>Clients Say After Switching to <span>Euroasiann</span></h2>
 
         <p>
           Teams across fleet operations, finance, crew accounts, procurement,

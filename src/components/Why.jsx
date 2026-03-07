@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import lottie from "lottie-web";
 import { Ship, Brain, ShieldCheck, Layers } from "lucide-react";
 import "../styles/Why1.css";
-
+import KPI from "../components/KpiStrip";
 function LottieIcon({ path }) {
   const ref = useRef(null);
 
@@ -81,6 +81,8 @@ export default function WhyWeDifferent() {
           );
         })}
       </div>
+      <KPI />
     </section>
+    
   );
 }

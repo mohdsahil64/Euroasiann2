@@ -39,13 +39,13 @@
 
 .reviews-header h2 {
   margin: 0 0 16px;
-  font-size: 38px;
+  font-size: 37px;
   font-weight: 700;
-  color: #121f57;
+  color: #0f183f;
 }
 
 .reviews-header span {
-  color: rgb(7, 6, 6);
+  color: rgba(7, 6, 6, 0.842);
 }
 
 .reviews-header p {

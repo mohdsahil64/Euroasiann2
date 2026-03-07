@@ -146,7 +146,7 @@
 .video-frame {
   width: 950px; /* <-- Video bada */
   max-width: 100%;
-  border-radius: 16px;
+  border-radius: 0px;
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0,0,0,0.12);
 }

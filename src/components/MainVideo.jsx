@@ -138,7 +138,7 @@ export default function VideoShowcase() {
                 onPlay={() => setIsPlaying(true)}
                 onPause={() => setIsPlaying(false)}
               >
-                <source src="/videos/mainvideo.mp4" type="video/mp4" />
+                <source src="https://res.cloudinary.com/depjmtq3g/video/upload/v1772892997/Corporate-Video-2024_New_MA-LogoOutro_1_jt7se4.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
 

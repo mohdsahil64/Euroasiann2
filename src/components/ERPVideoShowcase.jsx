@@ -1,14 +1,29 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import gsap from "gsap";
+import {
+  Ship,
+  Users,
+  PackageSearch,
+  ShieldCheck,
+  BadgeCheck,
+  ArrowLeft,
+  ArrowRight,
+  MonitorPlay,
+} from "lucide-react";
 import "../styles/ERPVideoShowcase.css";
 
-const vesselVideo = "/videos/vessel.mp4";
-const crewVideo = "/videos/crew.mp4";
-const rfqVideo = "/videos/rfq.mp4";
-const complianceVideo = "/videos/compliance.mp4";
-const certificationsVideo = "/videos/certifications.mp4";
+const vesselVideo =
+  "https://res.cloudinary.com/depjmtq3g/video/upload/v1772961728/vessel_o74aad.mp4";
+const crewVideo =
+  "https://res.cloudinary.com/depjmtq3g/video/upload/v1772961598/crew_gjs5al.mp4";
+const rfqVideo =
+  "https://res.cloudinary.com/depjmtq3g/video/upload/v1772961601/rfq_pn1y5k.mp4";
+const complianceVideo =
+  "https://res.cloudinary.com/depjmtq3g/video/upload/v1772961598/certifications_iw4n3r.mp4";
+const certificationsVideo =
+  "https://res.cloudinary.com/depjmtq3g/video/upload/v1772961598/certifications_iw4n3r.mp4";
 
-const SLIDE_DURATION = 8; // seconds (5–10s as you want)
+const SLIDE_DURATION = 8;
 
 export default function ERPVideoShowcase() {
   const slides = useMemo(
@@ -17,26 +32,36 @@ export default function ERPVideoShowcase() {
         title: "Vessel Management",
         desc: "Track voyage status, vessel KPIs, documents, and operational visibility in one place.",
         video: vesselVideo,
+        icon: Ship,
+        short: "Vessel",
       },
       {
         title: "Crew Management",
         desc: "Manage crew profiles, schedules, certifications, and onboard readiness with full control.",
         video: crewVideo,
+        icon: Users,
+        short: "Crew",
       },
       {
         title: "RFQ & Procurement",
         desc: "Automate RFQs, compare vendor quotes, approvals, and purchase orders seamlessly.",
         video: rfqVideo,
+        icon: PackageSearch,
+        short: "Procurement",
       },
       {
         title: "Compliance & Audits",
         desc: "Stay audit-ready with smart compliance tracking, logs, and structured reporting.",
         video: complianceVideo,
+        icon: ShieldCheck,
+        short: "Compliance",
       },
       {
         title: "Certificates & Documentation",
-        desc: "Centralize vessel/crew certificates with expiry alerts and secure storage.",
+        desc: "Centralize vessel and crew certificates with expiry alerts and secure storage.",
         video: certificationsVideo,
+        icon: BadgeCheck,
+        short: "Certificates",
       },
     ],
     []
@@ -44,13 +69,34 @@ export default function ERPVideoShowcase() {
 
   const [active, setActive] = useState(0);
 
-  const wrapRef = useRef(null);
   const textRef = useRef(null);
+  const videoShellRef = useRef(null);
   const videoRef = useRef(null);
-  const progressRef = useRef(null);
-
+  const progressBarRef = useRef(null);
   const timerRef = useRef(null);
-  const tlRef = useRef(null);
+  const progressTweenRef = useRef(null);
+  const animTlRef = useRef(null);
+
+  const clearAutoTimer = () => {
+    if (timerRef.current) {
+      clearTimeout(timerRef.current);
+      timerRef.current = null;
+    }
+  };
+
+  const killProgressTween = () => {
+    if (progressTweenRef.current) {
+      progressTweenRef.current.kill();
+      progressTweenRef.current = null;
+    }
+  };
+
+  const scheduleNext = () => {
+    clearAutoTimer();
+    timerRef.current = setTimeout(() => {
+      setActive((p) => (p + 1) % slides.length);
+    }, SLIDE_DURATION * 1000);
+  };
 
   const playActiveVideo = async () => {
     const vid = videoRef.current;
@@ -61,122 +107,173 @@ export default function ERPVideoShowcase() {
       vid.currentTime = 0;
       await vid.play();
     } catch {
-      // autoplay block ho to user first interaction ke baad play ho jayega
+      // autoplay block ignore
     }
   };
 
-  const animateIn = () => {
+  const runProgress = () => {
+    killProgressTween();
+    gsap.set(progressBarRef.current, {
+      transformOrigin: "left center",
+      scaleX: 0,
+    });
+
+    progressTweenRef.current = gsap.to(progressBarRef.current, {
+      scaleX: 1,
+      duration: SLIDE_DURATION,
+      ease: "none",
+    });
+  };
+
+  const runTransition = () => {
+    animTlRef.current?.kill();
+
     const tl = gsap.timeline();
-    tlRef.current = tl;
+    animTlRef.current = tl;
 
     tl.fromTo(
       textRef.current,
-      { y: 14, opacity: 0 },
-      { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" }
+      { opacity: 0, y: 18 },
+      { opacity: 1, y: 0, duration: 0.65, ease: "power3.out" }
     ).fromTo(
-      videoRef.current,
-      { y: 18, opacity: 0, scale: 0.985 },
-      { y: 0, opacity: 1, scale: 1, duration: 0.7, ease: "power3.out" },
+      videoShellRef.current,
+      { opacity: 0, y: 16, scale: 0.988 },
+      { opacity: 1, y: 0, scale: 1, duration: 0.75, ease: "power3.out" },
       "-=0.35"
     );
-
-    // progress bar animate (fills in SLIDE_DURATION sec)
-    gsap.fromTo(
-      progressRef.current,
-      { scaleX: 0 },
-      { scaleX: 1, duration: SLIDE_DURATION, ease: "none" }
-    );
-  };
-
-  const goNext = () => {
-    setActive((p) => (p + 1) % slides.length);
   };
 
   useEffect(() => {
-    // reset progress
-    gsap.set(progressRef.current, { transformOrigin: "left center", scaleX: 0 });
-
-    // play video
     playActiveVideo();
+    runTransition();
+    runProgress();
+    scheduleNext();
 
-    // animate in
-    animateIn();
-
-    // auto-next
-    clearInterval(timerRef.current);
-    timerRef.current = setInterval(goNext, SLIDE_DURATION * 1000);
-
-    return () => clearInterval(timerRef.current);
+    return () => {
+      clearAutoTimer();
+      killProgressTween();
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [active]);
 
-  // Pause on hover (premium feel)
+  useEffect(() => {
+    return () => {
+      clearAutoTimer();
+      killProgressTween();
+      animTlRef.current?.kill();
+    };
+  }, []);
+
+  const goNext = () => setActive((p) => (p + 1) % slides.length);
+  const goPrev = () => setActive((p) => (p - 1 + slides.length) % slides.length);
+
   const onHover = (pause) => {
     if (pause) {
-      videoRef.current?.pause();
-      clearInterval(timerRef.current);
-      tlRef.current?.pause();
-      gsap.globalTimeline.pause();
+      clearAutoTimer();
+      progressTweenRef.current?.pause();
     } else {
-      playActiveVideo();
-      tlRef.current?.play();
-      gsap.globalTimeline.play();
-      timerRef.current = setInterval(goNext, SLIDE_DURATION * 1000);
+      progressTweenRef.current?.play();
+      scheduleNext();
     }
   };
 
+  const ActiveIcon = slides[active].icon;
+
   return (
-    <section className="evs-section" ref={wrapRef}>
-      <div className="evs-container">
-        <div className="evs-left" ref={textRef}>
-          <div className="evs-eyebrow">PRODUCT WALKTHROUGH</div>
+    <section className="evs2-section">
+      <div className="evs2-container">
+        {/* LEFT */}
+        <div className="evs2-left" ref={textRef}>
+          <div className="evs2-eyebrow-row">
+            <div className="evs2-eyebrow">
+              <span className="evs2-eyebrow-icon">
+                <MonitorPlay size={16} />
+              </span>
+              PRODUCT WALKTHROUGH
+            </div>
 
-          <h2 className="evs-title">{slides[active].title}</h2>
+            <div className="evs2-counter">
+              {String(active + 1).padStart(2, "0")} / {String(slides.length).padStart(2, "0")}
+            </div>
+          </div>
 
-          <p className="evs-desc">{slides[active].desc}</p>
+          <h2 className="evs2-title">{slides[active].title}</h2>
+          <p className="evs2-desc">{slides[active].desc}</p>
 
-                    <div className="evs-controls">
-            <button className="evs-btn" onClick={() => setActive((p) => (p - 1 + slides.length) % slides.length)}>
-            ⇦ Previous
+          <div className="evs2-controls">
+            <button className="evs2-btn" onClick={goPrev}>
+              <ArrowLeft size={16} />
+              Previous
             </button>
 
-            <button className="evs-btn primary" onClick={goNext}>
-              Next ⇨
+            <button className="evs2-btn primary" onClick={goNext}>
+              Next
+              <ArrowRight size={16} />
             </button>
           </div>
 
-       
-           
-
           
 
-          <div className="evs-mini">
-            {slides.map((s, i) => (
-              <button
-                key={s.title}
-                className={`evs-pill ${i === active ? "active" : ""}`}
-                onClick={() => setActive(i)}
-              >
-                {s.title}
-              </button>
-            ))}
+          <div className="evs2-mini">
+            {slides.map((s, i) => {
+              const Icon = s.icon;
+              return (
+                <button
+                  key={s.title}
+                  className={`evs2-pill ${i === active ? "active" : ""}`}
+                  onClick={() => setActive(i)}
+                >
+                  <span className="evs2-pill-icon">
+                    <Icon size={15} />
+                  </span>
+                  <span className="evs2-pill-text">{s.title}</span>
+                  {i === active && <span className="evs2-pill-line" />}
+                </button>
+              );
+            })}
           </div>
         </div>
 
-        <div className="evs-right" onMouseEnter={() => onHover(true)} onMouseLeave={() => onHover(false)}>
-          <div className="evs-laptop">
-            <video
-              ref={videoRef}
-              className="evs-video"
-              src={slides[active].video}
-              muted
-              playsInline
-              autoPlay
-              loop
-              preload="metadata"
-            />
+        <div
+          className="evs2-right"
+          onMouseEnter={() => onHover(true)}
+          onMouseLeave={() => onHover(false)}
+          ref={videoShellRef}
+        >
+          <div className="evs2-video-shell">
+            <div className="evs2-topbar">
+              <span className="dot red" />
+              <span className="dot yellow" />
+              <span className="dot green" />
+              <span className="evs2-topbar-label">Euroasiann Module Preview</span>
+            </div>
+
+            <div className="evs2-video-frame">
+              <video
+                ref={videoRef}
+                className="evs2-video"
+                src={slides[active].video}
+                muted
+                playsInline
+                autoPlay
+                loop
+                preload="metadata"
+              />
+
+              <div className="evs2-video-overlay" />
+              <div className="evs2-video-title">
+                <ActiveIcon size={18} />
+                {slides[active].short}
+              </div>
+            </div>
+
+             
+
+            <div className="evs2-bottom-strip">
+              <span className="evs2-status-dot" />
+              <span>Auto-playing module previews with synchronized title updates</span>
+            </div>
           </div>
-          
         </div>
       </div>
     </section>

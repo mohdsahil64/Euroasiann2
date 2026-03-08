@@ -141,13 +141,8 @@ export default function VideoShowcase() {
                 <source src="https://res.cloudinary.com/depjmtq3g/video/upload/v1772892997/Corporate-Video-2024_New_MA-LogoOutro_1_jt7se4.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
+        </div>
 
-              <div className="video-overlay-glow" />
-
-              <div className="floating-tag tag-1">Maritime ERP</div>
-              <div className="floating-tag tag-2">Company Overview</div>
-             
-            </div>
 
             <div className="laptop-base" />
           </div>

@@ -16,7 +16,7 @@
   font-size: 36px;
   margin-top: -130px;
   margin-left: -200px;
-  margin-bottom: 0px;
+
   font-weight: 700;
   color: #0b2a4a;
   margin-bottom: 14px;
@@ -30,6 +30,7 @@
   font-size: 16px;
   line-height: 1.65;
   margin-left: -200px;
+  margin-bottom: 100px;
   font-style: italic;
   color: #16191dc9;
 }

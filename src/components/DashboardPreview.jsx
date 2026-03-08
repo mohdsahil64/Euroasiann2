@@ -33,7 +33,7 @@ export default function DashboardPreview() {
       renderer: "svg",
       loop: true,
       autoplay: true,
-      path: "/lottie/dashboard.json",
+      path: "/lottie/Dashboardd.json",
     });
 
     // Cleanup function to destroy animation on unmount

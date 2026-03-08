@@ -52,11 +52,14 @@ export default function TrustedBy() {
      <FlowMap />
      <Crew />
      <Main />
+       <Dashboard />
       <LiveFleetOcean />
       <Search />
-        <Dashboard />
+        
       <Video />
+
        <What />
+     
 
 
       {/* ✅ CardSwap Showcase Section (NEW) */}

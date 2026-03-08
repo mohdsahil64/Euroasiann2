@@ -28,7 +28,7 @@ export default function SearchVisibilityVideo() {
           <video
             ref={videoRef}
             className="search-video"
-            src="/videos/Search.webm"
+            src="https://res.cloudinary.com/depjmtq3g/video/upload/v1772961728/Search_wmtjcv.webm"
             autoPlay
             muted
             loop

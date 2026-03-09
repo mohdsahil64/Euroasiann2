@@ -5,6 +5,7 @@ import Why from "../components/Why";
 import Dashboard from "../components/DashboardPreview";
 import LiveFleetOcean from "../components/LiveFleetOcean";
 import Crew from "../components/Crew";
+import Text from "../components/SimpleText";
 import FlowMap from "../components/ProcessFlowMap";
 import CardSwap, { Card } from "../components/CardSwap";
 import Video from "../components/ERPVideoShowcase";
@@ -50,6 +51,7 @@ export default function TrustedBy() {
       </div>
      <Why />
      <FlowMap />
+        <Text />
      <Crew />
      <Main />
        <Dashboard />

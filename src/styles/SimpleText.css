@@ -1,0 +1,19 @@
+.simple-text h1 {
+  font-weight: 800;
+  margin-bottom: 50px;
+margin-top: -50px;
+  font-size: 100px;
+  margin-left: 220px;
+  font-family: Nato Sans, sans-serif;
+  background-image: url(/public/Text.jpg);
+  background-size: cover;
+  background-clip: text;
+  color: transparent;
+  animation: animate 20s linear infinite;
+}
+@keyframes animate {
+  to {
+    background-position-x: -300px;
+  }
+}
+

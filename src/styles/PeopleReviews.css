@@ -1,0 +1,250 @@
+.people-reviews-section {
+  position: relative;
+  padding: 110px 6%;
+  background: #ffffff;
+  margin-top: -150px;
+  overflow: hidden;
+}
+
+.reviews-header {
+  max-width: 880px;
+  margin: 0 auto 52px;
+  text-align: center;
+}
+
+.reviews-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.reviews-kicker-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: rgba(30, 143, 255, 0.1);
+  color: #081448;
+  border: 1px solid rgba(30, 143, 255, 0.12);
+}
+
+.reviews-kicker-text {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.10em;
+  color: #0b174b;
+}
+
+.reviews-header h2 {
+  margin: 0 0 16px;
+  font-size: 37px;
+  font-weight: 700;
+  color: #0f183f;
+}
+
+.reviews-header span {
+  color: rgba(7, 6, 6, 0.842);
+}
+
+.reviews-header p {
+  margin: 0 auto;
+  max-width: 760px;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #00000098;
+}
+
+/* slider shell */
+.reviews-slider-shell {
+  position: relative;
+  max-width: 1320px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 18px 0 10px;
+}
+
+.reviews-soft-glow {
+  position: absolute;
+  width: 360px;
+  height: 260px;
+  border-radius: 50%;
+  filter: blur(55px);
+  opacity: 0.26;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.glow-left {
+  left: 3%;
+  bottom: 10%;
+  background: rgba(84, 230, 184, 0.22);
+}
+
+.glow-center {
+  left: 39%;
+  top: 16%;
+  background: rgba(130, 139, 255, 0.2);
+}
+
+.glow-right {
+  right: 4%;
+  bottom: 8%;
+  background: rgba(255, 176, 132, 0.22);
+}
+
+.reviews-track {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  gap: 24px;
+  will-change: transform;
+}
+
+.review-card {
+  position: relative;
+  flex: 0 0 calc((100% - 72px) / 4);
+  min-height: 340px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #e9eef7;
+  border-radius: 22px;
+  padding: 24px 22px 22px;
+  box-shadow: 0 16px 40px rgba(8, 20, 72, 0.08);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 48px rgba(8, 20, 72, 0.12);
+}
+
+.review-stars {
+  display: flex;
+  gap: 5px;
+  color: #f5a623;
+  margin-bottom: 16px;
+}
+
+.review-quote-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: rgba(30, 143, 255, 0.08);
+  color: #081448;
+  margin-bottom: 16px;
+}
+
+.review-text {
+  margin: 0 0 24px;
+  font-size: 16px;
+  line-height: 1.85;
+  color: #000000c9;
+  flex: 1;
+}
+
+.review-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.review-user img {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ffffff;
+  box-shadow: 0 6px 18px rgba(8, 20, 72, 0.1);
+}
+
+.review-user-info h4 {
+  margin: 0 0 3px;
+  font-size: 17px;
+  font-weight: 800;
+  color: #081448;
+}
+
+.review-user-info span {
+  display: block;
+  font-size: 14px;
+  color: #42527d;
+}
+
+/* responsive */
+@media (max-width: 1180px) {
+  .review-card {
+    flex: 0 0 calc((100% - 24px) / 2);
+    min-height: 320px;
+  }
+}
+
+@media (max-width: 768px) {
+  .people-reviews-section {
+    padding: 85px 5%;
+    margin-top: -80px;
+  }
+
+  .reviews-header {
+    margin-bottom: 36px;
+  }
+
+  .reviews-header p {
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  .reviews-track {
+    gap: 18px;
+  }
+
+  .review-card {
+    flex: 0 0 100%;
+    min-height: 300px;
+    padding: 20px 18px;
+    border-radius: 18px;
+  }
+
+  .review-text {
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  .review-user-info h4 {
+    font-size: 16px;
+  }
+
+  .review-user-info span {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .people-reviews-section {
+    padding: 60px 4%;
+    margin-top: -50px;
+  }
+
+  .reviews-kicker-text {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+  }
+
+  .review-card {
+    min-height: 280px;
+  }
+
+  .review-text {
+    font-size: 14px;
+  }
+
+  .review-user img {
+    width: 46px;
+    height: 46px;
+  }
+}

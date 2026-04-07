@@ -45,7 +45,7 @@ export default function TrustedBy() {
         <div className="trusted-track">
           {logos.map((logo, index) => (
             <div className="trusted-logo" key={index}>
-              <img src={logo} alt="Trusted Company" />
+              <img src={logo} alt="Trusted Company" loading="lazy" />
             </div>
           ))}
         </div>
@@ -113,7 +113,7 @@ export default function TrustedBy() {
                  Real-Time
                 </div>
                 <div className="cs-media">
-                  <img src={analyticsShot} alt="Fleet & Vessel Analytics" />
+                  <img src={analyticsShot} alt="Fleet & Vessel Analytics" loading="lazy" />
                 </div>
                 <div className="cs-body">
                   <h3 className="cs-title">Fleet Operations Overview</h3>
@@ -136,7 +136,7 @@ export default function TrustedBy() {
                   Real-Time
                 </div>
                 <div className="cs-media">
-                  <img src={crewShot} alt="Ship & Crew Management" />
+                  <img src={crewShot} alt="Ship & Crew Management" loading="lazy" />
                 </div>
                 <div className="cs-body">
                   <h3 className="cs-title">Ship & Crew Management</h3>
@@ -158,7 +158,7 @@ export default function TrustedBy() {
                   Real-Time
                 </div>
                 <div className="cs-media">
-                  <img src={procurementShot} alt="Spare Parts & Procurement" />
+                  <img src={procurementShot} alt="Spare Parts & Procurement" loading="lazy" />
                 </div>
                 <div className="cs-body">
                   <h3 className="cs-title">Spare Parts & Procurement</h3>

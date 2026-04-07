@@ -32,7 +32,7 @@ export default function CrewAccountsPage() {
       eyebrow: "CREW ACCOUNTS",
       title: "Bank Payments",
       icon: Landmark,
-      image: crewBankImg,
+      image: crewHeroImg,
       description:
         "Enable a structured payment flow for crew-related financial activity from vessel submission to office validation and final banking action. This module helps finance and operations teams reduce delays, improve payment visibility, and maintain a clear chain of approval for every transaction that moves through the process.",
       bullets: [
@@ -47,7 +47,7 @@ export default function CrewAccountsPage() {
       eyebrow: "CREW ACCOUNTS",
       title: "MGA / Portage Bill",
       icon: ReceiptText,
-      image: crewBillImg,
+      image: crewBankImg,
       description:
         "Maintain a real-time understanding of crew payroll positions, advances, onboard cash balances, and settlement records with a process that stays synchronized between vessel and shore office. This module improves confidence in calculations, keeps records aligned, and helps teams manage crew account movements with greater operational accuracy.",
       bullets: [
@@ -214,7 +214,7 @@ export default function CrewAccountsPage() {
 
         <div className="crew-hero-right">
           <div className="crew-hero-image-wrap">
-            <img src={crewHeroImg} alt="Crew Accounts Hero" />
+            <img src={crewBillImg} alt="Crew Accounts Hero" />
           </div>
         </div>
       </section>

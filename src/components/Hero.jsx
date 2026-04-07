@@ -88,11 +88,11 @@ export default function Hero() {
 
 <div className="hero-right">
   <div className="mock-card main-card hero-img-anim">
-    <img src={homeImg} alt="ERP Dashboard" />
+    <img src={homeImg} alt="ERP Dashboard" loading="lazy" />
   </div>
 
   <div className="mock-card small-card hero-img-anim">
-    <img src={home1Img} alt="ERP Platform Demo" />
+    <img src={home1Img} alt="ERP Platform Demo" loading="lazy" />
   </div>
 </div>
 

@@ -33,17 +33,15 @@ const COVERAGE = [
 // ─── Contact persons ────────────────────────────────────────
 const CONTACTS = [
   {
-    name: "Arjun Mehta",
+    name: "Euroasiann Group",
     role: "Managing Director",
-    phone: "+91 0000000000",
-    email: "arjun.mehta@euroasiann.com",
+    email: "info@euroasianngroup.com",
   },
   {
     name: "Shipping / Marine",
-    subname: "Priya Nair",
+    subname: "Euroasiann Group",
     role: "Business Manager, Shipping",
-    phone: "+91 demo",
-    email: "priya.nair@euroasiann.com",
+    email: "info@euroasianngroup.com",
   },
 ];
  
@@ -299,10 +297,7 @@ const DryDockSection = () => {
 Hyderabad, Telangana 500040, IN</span>
             </div>
             <div className="dd-cta__contact-info">
-              <a href="tel:+917654321000">
-                <svg viewBox="0 0 20 20" fill="none"><path d="M3 3h4l2 4-2 2a12 12 0 005 5l2-2 4 2v4a2 2 0 01-2 2C8 20 0 12 0 5a2 2 0 012-2z" stroke="currentColor" strokeWidth="1.5"/></svg>
-                +91 Demo
-              </a>
+           
               <a href="mailto:info@euroasianngroup.com">
                 <svg viewBox="0 0 20 20" fill="none"><rect x="2" y="4" width="16" height="12" rx="2" stroke="currentColor" strokeWidth="1.5"/><path d="M2 7l8 5 8-5" stroke="currentColor" strokeWidth="1.5"/></svg>
                 info@euroasianngroup.com
@@ -324,10 +319,7 @@ Hyderabad, Telangana 500040, IN</span>
                   {c.subname && <span className="contact-card__dept">{c.name}</span>}
                   <strong className="contact-card__name">{c.subname || c.name}</strong>
                   <span className="contact-card__role">{c.role}</span>
-                  <a href={`tel:${c.phone}`} className="contact-card__detail">
-                    <svg viewBox="0 0 20 20" fill="none"><path d="M3 3h4l2 4-2 2a12 12 0 005 5l2-2 4 2v4a2 2 0 01-2 2C8 20 0 12 0 5a2 2 0 012-2z" stroke="currentColor" strokeWidth="1.4"/></svg>
-                    {c.phone}
-                  </a>
+                 
                   <a href={`mailto:${c.email}`} className="contact-card__detail">
                     <svg viewBox="0 0 20 20" fill="none"><rect x="2" y="4" width="16" height="12" rx="2" stroke="currentColor" strokeWidth="1.4"/><path d="M2 7l8 5 8-5" stroke="currentColor" strokeWidth="1.4"/></svg>
                     {c.email}

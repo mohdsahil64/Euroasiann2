@@ -6,12 +6,13 @@ import {
   BookText,
   Anchor,
   FileCheck2,
+  ScanSearch,
 } from "lucide-react";
 import "../styles/Crew.css";
 
-// ✅ Replace with your actual asset file names
 import portEntryImg from "../assets/crews/Port.jpg";
 import electronicLogbookImg from "../assets/crews/logbooks.jpg";
+import vobsImg from "../assets/crews/crewbank.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -34,6 +35,8 @@ export default function CrewExtraSections() {
         "Reduced delays caused by missing documents or disconnected handovers",
         "A structured entry workflow that improves operational clarity at every port call",
       ],
+      note: "Helps teams stay aligned before vessel arrival and port-side execution.",
+      noteIcon: Anchor,
     },
     {
       id: 2,
@@ -49,6 +52,27 @@ export default function CrewExtraSections() {
         "Reduced manual paperwork and lower risk of incomplete record entries",
         "Improved traceability for inspections, audits, and performance analysis",
       ],
+      note: "Supports cleaner documentation, long-term traceability, and easier compliance review.",
+      noteIcon: FileCheck2,
+    },
+    {
+      id: 3,
+      eyebrow: "VOBS — Vessel Onboarding Diagnostic Service",
+      title: "Vessel Onboarding Diagnostic Service",
+      icon: ScanSearch,
+      image: vobsImg,
+      description:
+        "VOBS is a structured diagnostic process designed to bring any vessel up to full operational readiness within the Euroasiann ERP platform. From the moment a vessel is onboarded, VOBS ensures that all critical data — crew profiles, technical records, compliance documents, and operational parameters. ",
+      bullets: [
+        "End-to-end vessel data validation at the point of system onboarding",
+        
+        "Real-time air quality monitoring across vessel engine rooms, cargo holds, and enclosed spaces",
+        "Automated alerts for toxic gas levels, CO2 concentration, and ventilation failures",
+        "Onboarding diagnostic checks for air quality sensors and environmental compliance systems",
+        "Supports IMO and MARPOL air emission standards with traceable quality data logs",
+      ],
+      note: "Ensures every vessel is fully operational and data-ready before entering the live ERP environment.",
+      noteIcon: ScanSearch,
     },
   ];
 
@@ -130,6 +154,7 @@ export default function CrewExtraSections() {
     <section className="crew-extra-wrap" ref={wrapperRef}>
       {sections.map((section, index) => {
         const Icon = section.icon;
+        const NoteIcon = section.noteIcon;
         const reverse = index % 2 === 1;
 
         return (
@@ -164,13 +189,9 @@ export default function CrewExtraSections() {
 
               <div className="crew-extra-note">
                 <span className="crew-extra-note-icon">
-                  {index === 0 ? <Anchor size={15} /> : <FileCheck2 size={15} />}
+                  <NoteIcon size={15} />
                 </span>
-                <span>
-                  {index === 0
-                    ? "Helps teams stay aligned before vessel arrival and port-side execution."
-                    : "Supports cleaner documentation, long-term traceability, and easier compliance review."}
-                </span>
+                <span>{section.note}</span>
               </div>
             </div>
           </article>

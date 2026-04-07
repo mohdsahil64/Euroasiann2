@@ -10,7 +10,7 @@ margin-top: -50px;
   background-size: cover;
   background-clip: text;
   color: transparent;
-  animation: animate 20s linear infinite;
+  animation: animate 20s linear infinite alternate;
 }
 @keyframes animate {
   to {

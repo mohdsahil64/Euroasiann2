@@ -12,44 +12,9 @@ export default function MaritimeStakeholderCards() {
   const lottieRefs = useRef([]);
 
   const modules = [
+
     {
       id: 1,
-      title: "Ship Managers",
-      accent: "ship",
-      animationLabel: "Ship manager operations animation",
-      animationPath: "/lottie/Dashboardd.json",
-      description:
-        "Ship Managers need a single digital command center to monitor vessel health, operational performance, technical maintenance, safety compliance, and cost efficiency across the fleet. bring all critical decisions into one connected ERP workflow so teams can act faster with confidence.",
-      points: [
-        "Live fleet performance dashboards across vessels, routes, and operating cycles",
-        "Planned vs reactive maintenance visibility with task scheduling and service history",
-        "Compliance checkpoints for inspections, certifications, and technical documentation",
-        "Operational cost trend tracking for fuel, services, spares, and voyage-linked expenses",
-      ],
-      kpiTitle: "Primary Outcome",
-      kpiText:
-        "Stronger fleet control, fewer delays, and more predictable technical planning.",
-    },
-    {
-      id: 2,
-      title: "Vendors & Suppliers",
-      accent: "vendor",
-      animationLabel: "Vendor maritime supply workflow animation",
-      animationPath: "/lottie/venderdashboard.json",
-      description:
-        "Vendors and suppliers can use this module to handle maritime RFQs, quotations, order updates, and communication with greater speed and transparency. Instead of managing requests through scattered emails and calls, suppliers get a structured workflow that helps them respond quickly and improve conversion on high-value maritime opportunities.",
-      points: [
-        "Centralized RFQ feed with filters by vessel, category, urgency, and delivery window",
-        "Faster quotation submission with itemized response structure and version tracking",
-        "Order status updates with acknowledgement, dispatch, and delivery milestone visibility",
-        "Stronger buyer communication through a single shared procurement interaction timeline",
-      ],
-      kpiTitle: "Primary Outcome",
-      kpiText:
-        "Faster RFQ response cycles and smoother order execution with maritime buyers.",
-    },
-    {
-      id: 3,
       title: "Port Agents",
       accent: "port",
       animationLabel: "Port agent vessel coordination animation",
@@ -67,7 +32,7 @@ export default function MaritimeStakeholderCards() {
         "More reliable port call execution with better visibility for all involved teams.",
     },
     {
-      id: 4,
+      id: 2,
       title: "Charterers & Operators",
       accent: "charter",
       animationLabel: "Chartering and voyage planning animation",
@@ -85,7 +50,7 @@ export default function MaritimeStakeholderCards() {
         "Better voyage planning decisions and improved operational predictability.",
     },
     {
-      id: 5,
+      id: 3,
       title: "Crew & Managing Teams",
       accent: "crew",
       animationLabel: "Crew planning and manning workflow animation",
@@ -103,7 +68,7 @@ export default function MaritimeStakeholderCards() {
         "Smoother crew deployment planning with fewer readiness-related delays.",
     },
     {
-      id: 6,
+      id: 4,
       title: "Procurement & Purchasing Teams",
       accent: "procurement",
       animationLabel: "Procurement process automation animation",
@@ -121,7 +86,7 @@ export default function MaritimeStakeholderCards() {
         "Higher procurement efficiency with improved cost visibility and control.",
     },
     {
-      id: 7,
+      id: 5,
       title: "Technical, Safety & Compliance Teams",
       accent: "compliance",
       animationLabel: "Safety compliance and audit readiness animation",
@@ -139,7 +104,7 @@ export default function MaritimeStakeholderCards() {
         "Stronger compliance discipline with better visibility into safety-critical actions.",
     },
     {
-      id: 8,
+      id: 6,
       title: "Management Reporting & Analytics",
       accent: "analytics",
       animationLabel: "Maritime analytics dashboard animation",

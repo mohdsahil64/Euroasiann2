@@ -202,3 +202,123 @@
     padding: 13px 18px;
   }
 }
+/* --- Success Modal Styles --- */
+.contact-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(8, 20, 72, 0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.contact-modal-content {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 32px;
+  padding: 50px 40px;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.4);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: none;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.modal-close-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotate(90deg);
+}
+
+.modal-icon-wrap {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.success-pulse {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(30, 167, 255, 0.2);
+  border-radius: 50%;
+  animation: modalPulse 2s infinite;
+}
+
+@keyframes modalPulse {
+  0% { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+.contact-modal-content h2 {
+  font-size: 32px;
+  color: #ffffff;
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+.contact-modal-content p {
+  font-size: 16px;
+  color: #c7d7ea;
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+.contact-modal-content strong {
+  color: #1ea7ff;
+}
+
+.modal-action-btn {
+  background: #1ea7ff;
+  color: #fff;
+  border: none;
+  padding: 14px 32px;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(30, 167, 255, 0.3);
+}
+
+.modal-action-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px rgba(30, 167, 255, 0.4);
+}
+
+@media (max-width: 520px) {
+  .contact-modal-content {
+    padding: 40px 24px;
+    border-radius: 24px;
+  }
+  .contact-modal-content h2 {
+    font-size: 26px;
+  }
+}

@@ -24,8 +24,8 @@ export default function Footer() {
         {/* LEFT */}
         <div className="footer-brand">
           <img src={logo} alt="Euroasiann" />
-          <div className="footer-modules">
-            <span>3rd Floor, A321, Master Mind 4, Royal Palms, Goregaon East, Mumbai-400065, India </span>
+          <div className="footer-address">
+            <span>3rd Floor, A321, Master Mind 4, Royal Palms, Goregaon East, Mumbai-400065, India</span>
           </div>
           <div className="footer-socials">
             <a href="https://www.linkedin.com/company/euroasiann-group/" target="_blank" rel="noopener noreferrer"><FaLinkedinIn /></a>

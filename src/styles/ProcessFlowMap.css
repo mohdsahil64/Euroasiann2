@@ -4,13 +4,11 @@
   padding: 90px 6% 110px;
 }
 
-
 .pfm-diamond-badge-dot {
   width: 8px;
   height: 8px;
   border-radius: 999px;
   background: #137c48;
-
 }
 
 .pfm-diamond-stage {
@@ -29,7 +27,7 @@
   position: absolute;
   border-radius: 50%;
   filter: blur(55px);
-  opacity: 0.28;
+  opacity: 0.18;
   pointer-events: none;
 }
 
@@ -38,7 +36,6 @@
   height: 360px;
   left: -120px;
   top: -120px;
- 
 }
 
 .pfm-diamond-stage::after {
@@ -46,7 +43,7 @@
   height: 320px;
   right: -100px;
   bottom: -100px;
-  background: rgb(6, 109, 58);
+  background: rgb(30, 100, 255);
 }
 
 /* lines */
@@ -61,76 +58,80 @@
 
 .pfm-diamond-line {
   fill: none;
-  stroke: rgba(30, 143, 255, 0.72);
+  stroke: rgba(8, 20, 72, 0.55);
   stroke-width: 2.5;
   stroke-linecap: round;
   stroke-dasharray: 10 10;
 }
 
-/* moving pulses */
+/* moving pulses — BLUE */
 .pfm-diamond-pulse {
   position: absolute;
   width: 11px;
   height: 11px;
   border-radius: 999px;
-  background: #3cff9e;
-  box-shadow: 0 0 0 7px rgba(60, 255, 158, 0.14);
+  background: #081448;
+  box-shadow: 0 0 0 7px rgba(8, 20, 72, 0.15);
   z-index: 2;
   pointer-events: none;
 }
 
+/* Top pulse: starts at SVG line top (y=220/760*100%) and moves down to core (y=330/760*100%) */
 .pulse-top {
-  left: 595px;
-  top: 160px;
+  left: calc(50% - 5px);
+  top: 28.9%; /* 220/760 */
   animation: pfmMoveTop 3.4s linear infinite;
 }
 
+/* Left pulse aligned with horizontal line y=380 */
 .pulse-left {
-  left: 295px;
-  top: 375px;
+  left: 23.7%; /* 285/1200 */
+  top: calc(50% - 5px);
   animation: pfmMoveLeft 3.6s linear infinite;
 }
 
+/* Right pulse aligned with horizontal line y=380 */
 .pulse-right {
-  left: 905px;
-  top: 375px;
+  left: 76.2%; /* 915/1200 */
+  top: calc(50% - 5px);
   animation: pfmMoveRight 3.6s linear infinite;
 }
 
+/* Bottom pulse: starts at core bottom (y=430/760) and moves down to node (y=520/760) */
 .pulse-bottom {
-  left: 595px;
-  top: 600px;
+  left: calc(50% - 5px);
+  top: 56.6%; /* 430/760 */
   animation: pfmMoveBottom 3.4s linear infinite;
 }
 
 @keyframes pfmMoveTop {
-  0% { transform: translateY(0); opacity: 0.2; }
-  15% { opacity: 1; }
-  100% { transform: translateY(135px); opacity: 0.2; }
+  0%   { transform: translateY(0);    opacity: 0.2; }
+  15%  { opacity: 1; }
+  100% { transform: translateY(calc((330px - 220px) * 1)); opacity: 0.2; }
 }
 
 @keyframes pfmMoveLeft {
-  0% { transform: translateX(0); opacity: 0.2; }
-  15% { opacity: 1; }
+  0%   { transform: translateX(0);    opacity: 0.2; }
+  15%  { opacity: 1; }
   100% { transform: translateX(170px); opacity: 0.2; }
 }
 
 @keyframes pfmMoveRight {
-  0% { transform: translateX(0); opacity: 0.2; }
-  15% { opacity: 1; }
+  0%   { transform: translateX(0);    opacity: 0.2; }
+  15%  { opacity: 1; }
   100% { transform: translateX(-170px); opacity: 0.2; }
 }
 
 @keyframes pfmMoveBottom {
-  0% { transform: translateY(0); opacity: 0.2; }
-  15% { opacity: 1; }
-  100% { transform: translateY(-135px); opacity: 0.2; }
+  0%   { transform: translateY(0);    opacity: 0.2; }
+  15%  { opacity: 1; }
+  100% { transform: translateY(90px); opacity: 0.2; }
 }
 
 /* common node */
 .pfm-diamond-node {
   position: absolute;
-  width:200px;
+  width: 200px;
   border-radius: 22px;
   background: rgba(255, 255, 255, 0.95);
   border: 1px solid rgb(8, 20, 72);
@@ -142,7 +143,7 @@
 
 @keyframes pfmFloat {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-7px); }
+  50%       { transform: translateY(-7px); }
 }
 
 .pfm-diamond-icon {
@@ -182,42 +183,74 @@
   font-size: 14px;
   font-weight: 900;
   letter-spacing: 0.1em;
- 
   color: #081448;
   opacity: 0.85;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.pfm-diamond-foot:hover {
+  opacity: 1;
+}
+
+/* Disabled state for Coming Soon */
+.pfm-foot-disabled {
+  cursor: default;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* Node top row for Coming Soon badge */
+.pfm-node-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.pfm-node-top-row .pfm-diamond-icon {
+  margin-bottom: 0;
+}
+
+.pfm-coming-soon {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+  background: linear-gradient(135deg, #1e6fff, #0d4ecc);
+  border-radius: 999px;
+  padding: 4px 10px;
 }
 
 /* diamond positions */
+/* node-top & node-bottom use calc() so float animation (translateY) doesn't break horizontal centering */
 .node-top {
-  left: 42%;
-  top: 100cap;
-  transform: translateX(-50%);
+  left: calc(50% - 100px);
+  top: 10px;
+  transform: none;
 }
 
 .node-left {
-  left: 85px;
-  top: 35%;
+  left: 70px;
+  top: 50%;
   transform: translateY(-50%);
 }
 
 .node-right {
-  right: 85px;
-  top: 35%;
+  right: 70px;
+  top: 50%;
   transform: translateY(-50%);
 }
 
 .node-bottom {
-  left: 42%;
-  bottom: 55px;
-  transform: translateX(-50%);
+  left: calc(50% - 100px);
+  bottom: 5px;
+  transform: none;
 }
-.node-top { top: 10px; }
 
-.node-bottom { bottom: 5px; }
-
-.node-left { left: 70px; }
-
-.node-right { right: 70px; }
 /* core */
 .pfm-diamond-core {
   position: absolute;
@@ -290,42 +323,105 @@
   text-transform: uppercase;
 }
 
-/* responsive */
+/* ─── RESPONSIVE ─── */
+
+/* Tablet / small desktop — scale down the whole stage */
 @media (max-width: 1100px) {
   .pfm-diamond-stage {
-    height: auto;
-    padding: 22px;
+    height: 560px;
   }
 
+  .pfm-diamond-node {
+    width: 160px;
+    padding: 12px 12px 10px;
+  }
+
+  .pfm-diamond-node h4 {
+    font-size: 14px;
+  }
+
+  .pfm-diamond-node p {
+    font-size: 11px;
+  }
+
+  .pfm-diamond-core {
+    width: 190px;
+  }
+
+  .pfm-diamond-core-logo img {
+    height: 40px;
+  }
+
+  .node-left  { left: 20px; }
+  .node-right { right: 20px; }
+}
+
+/* Mobile — vertical stacked flow */
+@media (max-width: 768px) {
+  .pfm-diamond-section {
+    padding: 60px 5% 80px;
+    margin-top: -60px;
+  }
+
+  .pfm-diamond-stage {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    overflow: visible;
+  }
+
+  /* hide SVG lines & pulses on mobile */
   .pfm-diamond-svg,
   .pfm-diamond-pulse {
     display: none;
   }
 
-  .pfm-diamond-core,
-  .pfm-diamond-node {
+  /* center logo first */
+  .pfm-diamond-core {
     position: relative;
     left: auto;
     right: auto;
     top: auto;
     bottom: auto;
-    transform: none !important;
-    width: 100%;
-    max-width: 760px;
-    margin: 0 auto 16px;
+    transform: none;
+    width: 90%;
+    max-width: 300px;
+    order: 0;
+    margin-bottom: 0;
     animation: none;
   }
-}
 
-@media (max-width: 768px) {
-  .pfm-diamond-section {
-    padding: 70px 5% 80px;
-    margin-top: -60px;
+  .pfm-diamond-node {
+    position: relative;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    width: 90%;
+    max-width: 340px;
+    animation: none;
   }
 
-  .pfm-diamond-badge {
-    font-size: 11px;
-    letter-spacing: 0.12em;
+  /* vertical flow order: top → center → left → right → bottom */
+  .node-top    { order: -1; margin-bottom: 0; }
+  .pfm-diamond-core { order: 0; }
+  .node-left   { order: 1; }
+  .node-right  { order: 2; }
+  .node-bottom { order: 3; }
+
+  /* draw a simple vertical connector line between stacked cards */
+  .pfm-diamond-node + .pfm-diamond-node::before,
+  .pfm-diamond-core + .pfm-diamond-node::before,
+  .pfm-diamond-node + .pfm-diamond-core::before {
+    content: "";
+    display: block;
+    width: 2px;
+    height: 28px;
+    background: rgba(30, 143, 255, 0.5);
+    margin: 0 auto 0;
   }
 }
 

@@ -3,14 +3,18 @@ import React, { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "../styles/DryDockSection.css";
+import drydock1 from "../assets/drydock/1.jpg";
+import drydock2 from "../assets/drydock/2.jpg";
+import drydock3 from "../assets/drydock/3.jpg";
+import drydock6 from "../assets/drydock/6.jpg";
  
 gsap.registerPlugin(ScrollTrigger);
  
-// ─── Image paths ────────────────────────────────────────────
+// ─── Image paths (Vite-imported so they work in production) ─
 const HERO_SLIDES = [
-  "/src/assets/drydock/1.jpg",
-  "/src/assets/drydock/2.jpg",
-  "/src/assets/drydock/3.jpg",
+  drydock1,
+  drydock2,
+  drydock3,
 ];
  
 // ─── ERP Modules ────────────────────────────────────────────
@@ -158,8 +162,9 @@ const DryDockSection = () => {
             <div
               key={i}
               className={`dd-slide ${i === activeSlide ? "dd-slide--on" : ""} ${i === prevSlide ? "dd-slide--off" : ""}`}
-              style={{ backgroundImage: `url(${src})` }}
-            />
+            >
+              <img src={src} alt={`Dry dock operations ${i + 1}`} />
+            </div>
           ))}
           {/* Dots */}
           <div className="dd-hero__dots">
@@ -201,7 +206,7 @@ const DryDockSection = () => {
       <section className="dd-covered" ref={sec2Ref}>
         <div className="dd-covered__image-wrap" ref={sec2ImgRef}>
           <img
-            src="/src/assets/drydock/6.jpg"
+            src={drydock6}
             alt="Dry dock worker on vessel"
             className="dd-covered__image"
           />
@@ -246,7 +251,7 @@ const DryDockSection = () => {
       <section className="dd-modules" ref={sec3Ref}>
         {/* Background image */}
         <div className="dd-modules__bg" ref={sec3ImgRef}>
-          <img src="/src/assets/drydock/3.jpg" alt="Dry dock aerial view" />
+          <img src={drydock3} alt="Dry dock aerial view" />
           <div className="dd-modules__overlay" />
         </div>
  
